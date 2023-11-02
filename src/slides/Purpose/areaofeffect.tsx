@@ -1,10 +1,10 @@
-import { Heading, Text, Appear, Slide, Grid, FlexBox, Notes } from "spectacle";
+import { Heading, Text, Appear, Slide, Grid, FlexBox } from "spectacle";
 import { LinuxCommandSpan } from "@Components/LinuxCommandSpan";
 
-export const PersonalIntroductionSlide = () => (
+export const PurposeAreaOfEffectSlide = () => (
   <Slide>
     <Heading>
-      <LinuxCommandSpan>whoami</LinuxCommandSpan>
+      <LinuxCommandSpan>cat disclaimer.txt</LinuxCommandSpan>
     </Heading>
     <Grid
       gridTemplateColumns="50% 50%"
@@ -23,7 +23,7 @@ export const PersonalIntroductionSlide = () => (
       </Appear>
       <Appear priority={5}>
         <FlexBox alignItems="center" justifyContent="center">
-          <Text>????</Text>
+          <Text>Started coding at 11 years old</Text>
         </FlexBox>
       </Appear>
       <Appear priority={3}>
@@ -42,8 +42,5 @@ export const PersonalIntroductionSlide = () => (
         </FlexBox>
       </Appear>
     </Grid>
-    <PersonalIntroductionNotes />
   </Slide>
 );
-
-const PersonalIntroductionNotes = () => <Notes></Notes>;

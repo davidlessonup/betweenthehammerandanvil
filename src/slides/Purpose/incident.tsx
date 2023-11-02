@@ -6,7 +6,6 @@ export const PurposeIncidentSlide = () => (
     <Heading>
       <LinuxCommandSpan>man leftpad-incident</LinuxCommandSpan>
     </Heading>
-
     <Grid
       gridTemplateColumns="50% 50%"
       gridTemplateRows="33% 33%"

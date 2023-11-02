@@ -6,7 +6,6 @@ export const ProfessionalIntroductionSlide = () => (
     <Heading>
       <LinuxCommandSpan>who -a</LinuxCommandSpan>
     </Heading>
-
     <Grid
       gridTemplateColumns="50% 50%"
       gridTemplateRows="33% 33%"

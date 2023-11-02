@@ -16,20 +16,29 @@ export const LinthomancyFailSlide = () => (
     <UnorderedList>
       <Appear>
         <ListItem>
+          Have developers use an IDE plugin{" "}
+          <Appear>Pro: Gives the developer real time insight of issues</Appear>{" "}
+          <Appear>Con: The developer might not use it</Appear>
+        </ListItem>
+      </Appear>
+      <Appear>
+        <ListItem>
           Create a pre-commit hook to run all linting{" "}
           <Appear>
-            Loses to <CodeSpan>git commit --no-verify</CodeSpan>
+            Pro: Gives the developer a timely insight that there are issues
+          </Appear>{" "}
+          <Appear>
+            Con: Can be bypassed with{" "}
+            <CodeSpan>git commit --no-verify</CodeSpan>
           </Appear>
         </ListItem>
       </Appear>
       <Appear>
         <ListItem>
-          Have developers use an IDE plugin{" "}
-          <Appear>Loses to someone just not using it</Appear>
+          Perform Linting on a build pipeline{" "}
+          <Appear>Pro: Breaks the build and makes fixing it a priority</Appear>{" "}
+          <Appear>Con: Might slow down builds with non-issues</Appear>
         </ListItem>
-      </Appear>
-      <Appear>
-        <ListItem>Perform Linting on a build pipeline</ListItem>
       </Appear>
     </UnorderedList>
   </Slide>

@@ -1,11 +1,17 @@
+import { LintLandingSlide } from "./landing";
 import { LinthomanyDefinitionSlide } from "./definition";
 import { LinthomancyFailSlide } from "./fail";
-import { LintStrengthExampleSlide } from "./example";
+import { LintStrengthBadExampleSlide } from "./example";
+import { LintStrengthGoodExampleSlide } from "./example";
+import { LintConclusionSlide } from "./conclusion";
 
 export const LinthomancyChapter = () => (
   <>
-    <LintStrengthExampleSlide />
+    <LintLandingSlide />
     <LinthomanyDefinitionSlide />
+    <LintStrengthBadExampleSlide />
+    <LintStrengthGoodExampleSlide />
     <LinthomancyFailSlide />
+    <LintConclusionSlide />
   </>
 );

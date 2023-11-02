@@ -84,7 +84,7 @@ const ProgressWrapper = styled.div`
   & > div {
     background: ${colors.primary};
     height: 12px;
-    width: 16px;
+    width: 6px;
     margin: 1px;
     animation: background-color 2s ease-out;
     display: flex;
@@ -93,6 +93,7 @@ const ProgressWrapper = styled.div`
 
     &[data-current="true"] {
       background: transparent;
+      width: 16px;
     }
 
     &[data-current="true"] ~ div {

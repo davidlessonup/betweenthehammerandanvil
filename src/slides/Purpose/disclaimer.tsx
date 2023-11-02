@@ -6,7 +6,6 @@ export const PurposeDisclaimerSlide = () => (
     <Heading>
       <LinuxCommandSpan>cat disclaimer.txt</LinuxCommandSpan>
     </Heading>
-
     <Grid
       gridTemplateColumns="50% 50%"
       gridTemplateRows="33% 33%"
