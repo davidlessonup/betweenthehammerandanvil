@@ -13,7 +13,6 @@ specifiers:
   eslint: ^8.45.0
   eslint-plugin-react-hooks: ^4.6.0
   eslint-plugin-react-refresh: ^0.4.3
-  prismjs: ^1.29.0
   react: ^18.2.0
   react-dom: ^18.2.0
   spectacle: ^10.1.6
@@ -24,7 +23,6 @@ specifiers:
 dependencies:
   '@emotion/react': 11.11.1_2un522rsefzocghoy2w4cfzkfa
   '@emotion/styled': 11.11.0_wvoqx4fwjhz4m3vj7btkmpw52m
-  prismjs: 1.29.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   spectacle: 10.1.6_mi74boqf2vfg3nvlr7tbycjxwy

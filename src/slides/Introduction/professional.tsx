@@ -1,4 +1,4 @@
-import { Heading, Text, Appear, Slide, Grid, FlexBox } from "spectacle";
+import { Heading, Text, Appear, Slide, Grid, FlexBox, Notes } from "spectacle";
 import { LinuxCommandSpan } from "@Components/LinuxCommandSpan";
 
 export const ProfessionalIntroductionSlide = () => (
@@ -14,27 +14,27 @@ export const ProfessionalIntroductionSlide = () => (
     >
       <Appear>
         <FlexBox alignItems="center" justifyContent="center">
-          <Text>David</Text>
+          <Text>Started coding at 11 years old</Text>
         </FlexBox>
       </Appear>
       <Appear priority={4}>
         <FlexBox alignItems="center" justifyContent="center">
-          <Text>(Almost) 33!</Text>
+          <Text>Code Golfer</Text>
         </FlexBox>
       </Appear>
       <Appear priority={5}>
         <FlexBox alignItems="center" justifyContent="center">
-          <Text>Started coding at 11 years old</Text>
+          <Text>UI/UX fanatic</Text>
         </FlexBox>
       </Appear>
       <Appear priority={3}>
         <FlexBox alignItems="center" justifyContent="center">
-          <Text>JRPG aficionado</Text>
+          <Text>CSS enjoyer</Text>
         </FlexBox>
       </Appear>
       <Appear priority={1}>
         <FlexBox alignItems="center" justifyContent="center">
-          <Text>Metalhead</Text>
+          <Text>Frontend Developer</Text>
         </FlexBox>
       </Appear>
       <Appear priority={6}>
@@ -43,5 +43,8 @@ export const ProfessionalIntroductionSlide = () => (
         </FlexBox>
       </Appear>
     </Grid>
+    <ProfessionalIntroductionNotes />
   </Slide>
 );
+
+const ProfessionalIntroductionNotes = () => <Notes></Notes>;

@@ -6,6 +6,7 @@ import {
   Appear,
   Slide,
 } from "spectacle";
+import { Deprecated } from "@Components/Deprecated";
 import { LinuxCommandSpan } from "@Components/LinuxCommandSpan";
 import { Acronym } from "@Components/Acronym";
 
@@ -16,12 +17,20 @@ export const TableOfContentsSlide = () => (
     </Heading>
     <UnorderedList>
       <Appear>
+        <Deprecated>
+          <ListItem>Intro</ListItem>
+        </Deprecated>
+      </Appear>
+      <Appear>
         <ListItem>
           What is <Acronym acronym="DX">Developer Experience</Acronym>
         </ListItem>
       </Appear>
       <Appear>
         <ListItem>Software Craftsmanship</ListItem>
+      </Appear>
+      <Appear>
+        <ListItem>Purpose of this talk</ListItem>
       </Appear>
       <Appear>
         <ListItem>

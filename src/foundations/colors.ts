@@ -4,4 +4,5 @@ export const colors = {
   tertiary: "#28292f",
   quaternary: "#0a0a0a",
   quinary: "#ffffff",
+  disabled: "gray",
 };

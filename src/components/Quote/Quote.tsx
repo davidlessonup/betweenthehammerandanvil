@@ -6,10 +6,12 @@ import { IconQuoteLeft } from "@Components/Icons/QuoteLeft";
 
 export interface QuoteProps {
   author: string;
-  children: string;
 }
 
-export const Quote: React.FC<QuoteProps> = ({ author, children }) => (
+export const Quote: React.FC<React.PropsWithChildren<QuoteProps>> = ({
+  author,
+  children,
+}) => (
   <StyledQuote>
     <span data-quote>
       <IconQuoteLeft fill={colors.primary} height="24px" width="24px" />

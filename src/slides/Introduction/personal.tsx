@@ -1,12 +1,13 @@
-import { Heading, Text, Appear, Slide, Grid, FlexBox } from "spectacle";
+import { Heading, Text, Appear, Slide, Grid, FlexBox, Notes } from "spectacle";
 import { LinuxCommandSpan } from "@Components/LinuxCommandSpan";
+import { BackgroundImage } from "@Components/BackgroundImage";
+import profilePic from "@Assets/profile.jpeg";
 
 export const PersonalIntroductionSlide = () => (
   <Slide>
     <Heading>
       <LinuxCommandSpan>whoami</LinuxCommandSpan>
     </Heading>
-
     <Grid
       gridTemplateColumns="50% 50%"
       gridTemplateRows="33% 33%"
@@ -24,7 +25,7 @@ export const PersonalIntroductionSlide = () => (
       </Appear>
       <Appear priority={5}>
         <FlexBox alignItems="center" justifyContent="center">
-          <Text>Started coding at 11 years old</Text>
+          <Text>????</Text>
         </FlexBox>
       </Appear>
       <Appear priority={3}>
@@ -43,5 +44,8 @@ export const PersonalIntroductionSlide = () => (
         </FlexBox>
       </Appear>
     </Grid>
+    <PersonalIntroductionNotes />
   </Slide>
 );
+
+const PersonalIntroductionNotes = () => <Notes></Notes>;

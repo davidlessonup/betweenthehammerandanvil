@@ -18,6 +18,7 @@ import { ProgressTemplate } from "@Templates/Progress/Progress";
 import { LandingSlide } from "@Slides/Landing";
 import { IntroductionChapter } from "@Slides/Introduction";
 import { TableOfContentsSlide } from "@Slides/TableOfContents";
+import { DeveloperExperienceChapter } from "@Slides/DeveloperExperience";
 import { PurposeChapter } from "@Slides/Purpose";
 import { BlacksmithingChapter } from "@Slides/Blacksmithing";
 import { OutroSlide } from "@Slides/Outro";
@@ -32,8 +33,9 @@ export const SlideDeck = () => (
     <LandingSlide />
     <IntroductionChapter />
     <TableOfContentsSlide />
-    <PurposeChapter />
+    <DeveloperExperienceChapter />
     <BlacksmithingChapter />
+    <PurposeChapter />
     <LinthomancyChapter />
     <OutroSlide />
     <Slide>

@@ -20,6 +20,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
+      "@Assets/*": ["./src/assets/*"],
       "@Components/*": ["./src/components/*"],
       "@Foundations/*": ["./src/foundations/*"],
       "@Slides/*": ["./src/slides/*"],
