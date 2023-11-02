@@ -1,46 +1,24 @@
-import { Heading, Text, Appear, Slide, Grid, FlexBox } from "spectacle";
+import { Heading, Slide, Notes, UnorderedList, ListItem } from "spectacle";
 import { LinuxCommandSpan } from "@Components/LinuxCommandSpan";
 
 export const PurposeAreaOfEffectSlide = () => (
   <Slide>
     <Heading>
-      <LinuxCommandSpan>cat disclaimer.txt</LinuxCommandSpan>
+      <LinuxCommandSpan>cat area.txt</LinuxCommandSpan>
     </Heading>
-    <Grid
-      gridTemplateColumns="50% 50%"
-      gridTemplateRows="33% 33%"
-      height="100%"
-    >
-      <Appear>
-        <FlexBox alignItems="center" justifyContent="center">
-          <Text>David</Text>
-        </FlexBox>
-      </Appear>
-      <Appear priority={4}>
-        <FlexBox alignItems="center" justifyContent="center">
-          <Text>(Almost) 33!</Text>
-        </FlexBox>
-      </Appear>
-      <Appear priority={5}>
-        <FlexBox alignItems="center" justifyContent="center">
-          <Text>Started coding at 11 years old</Text>
-        </FlexBox>
-      </Appear>
-      <Appear priority={3}>
-        <FlexBox alignItems="center" justifyContent="center">
-          <Text>JRPG aficionado</Text>
-        </FlexBox>
-      </Appear>
-      <Appear priority={1}>
-        <FlexBox alignItems="center" justifyContent="center">
-          <Text>Metalhead</Text>
-        </FlexBox>
-      </Appear>
-      <Appear priority={6}>
-        <FlexBox alignItems="center" justifyContent="center">
-          <Text>Movie Buff</Text>
-        </FlexBox>
-      </Appear>
-    </Grid>
+    Discovery - Design - Development - Testing & QA - Release - Maintenace -
+    Discovery (Loop)
+    <PurposeAreaOfEffectNotes />
   </Slide>
+);
+
+const PurposeAreaOfEffectNotes = () => (
+  <Notes>
+    This talk will focus on the following aspects:
+    <UnorderedList>
+      <ListItem>Development</ListItem>
+      <ListItem>Testing & QA</ListItem>
+      <ListItem>Maintenance</ListItem>
+    </UnorderedList>
+  </Notes>
 );
