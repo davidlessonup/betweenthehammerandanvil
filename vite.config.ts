@@ -7,6 +7,7 @@ export default defineConfig({
   build: {
     outDir: "./docs",
   },
+  base: "/betweenthehammerandanvil/",
   plugins: [
     react({
       jsxImportSource: "@emotion/react",
