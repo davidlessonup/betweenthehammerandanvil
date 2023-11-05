@@ -1,14 +1,15 @@
 import { Heading, Slide, Notes, UnorderedList, ListItem } from "spectacle";
 import { LinuxCommandSpan } from "@Components/LinuxCommandSpan/LinuxCommandSpan";
 import { Definition } from "@Components/Definition/Definition";
-import { SubHeading } from "@Components/SubHeading/SubHeading";
 
 export const PurposeUncomfortableTruthSlide = () => (
   <Slide>
     <Heading>
       <LinuxCommandSpan>cat zerosumgame.txt</LinuxCommandSpan>
     </Heading>
-    <SubHeading>The proccess of development is a Zero-sum game</SubHeading>
+    <Heading color="primary" fontSize="50px">
+      The proccess of development is a Zero-sum game
+    </Heading>
     <Definition>
       A Zero-sum game is a mathematical representation in game theory and
       economic theory of a situation that involves two sides, where the result
