@@ -5,8 +5,6 @@ import {
   UnorderedList,
   ListItem,
   Stepper,
-  Grid,
-  FlexBox,
 } from "spectacle";
 import styled from "@emotion/styled";
 import { LinuxCommandSpan } from "@Components/LinuxCommandSpan/LinuxCommandSpan";
@@ -14,73 +12,102 @@ import { colors } from "@Foundations/colors";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { ImInfinite } from "react-icons/im";
 
+const stepperValues = [
+  "diagram",
+  "inactive",
+  "development",
+  "testing",
+  "maintenance",
+] as const;
+type StepperValues = (typeof stepperValues)[number];
+
 export const PurposeAreaOfEffectSlide = () => {
   return (
     <Slide>
       <Heading>
         <LinuxCommandSpan>cat area.txt</LinuxCommandSpan>
       </Heading>
-      <Stepper
-        tagName="div"
-        values={["diagram", "effect", "development", "testing", "maintenance"]}
-      >
-        {(_, step) => (
-          <>
-            <StyledDiagramWrapper>
-              <ImInfinite />
-              <AiOutlineArrowRight />
-              <StyledDiagramRectangle type={step > 0 ? "inactive" : "neutral"}>
-                Discovery
-              </StyledDiagramRectangle>
-              <AiOutlineArrowRight />
-              <StyledDiagramRectangle type={step > 0 ? "inactive" : "neutral"}>
-                Design
-              </StyledDiagramRectangle>
-              <AiOutlineArrowRight />
-              <StyledDiagramRectangle
-                type={step > 0 ? "highlighted" : "neutral"}
-              >
-                Development
-              </StyledDiagramRectangle>
-              <AiOutlineArrowRight />
-              <StyledDiagramRectangle
-                type={step > 0 ? "highlighted" : "neutral"}
-              >
-                Testing & QA
-              </StyledDiagramRectangle>
-              <AiOutlineArrowRight />
-              <StyledDiagramRectangle type={step > 0 ? "inactive" : "neutral"}>
-                Release
-              </StyledDiagramRectangle>
-              <AiOutlineArrowRight />
-              <StyledDiagramRectangle
-                type={step > 0 ? "highlighted" : "neutral"}
-              >
-                Maintenace
-              </StyledDiagramRectangle>
-              <AiOutlineArrowRight />
-              <ImInfinite />
-            </StyledDiagramWrapper>
-            <Grid
-              gridTemplateColumns="33% 33% 33%"
-              gridTemplateRows="100%"
-              height="50vh"
-            >
-              {step > 1 && (
-                <FlexBox alignItems="center" justifyContent="center">
+      <Stepper tagName="div" values={stepperValues as unknown as string[]}>
+        {(value) => {
+          const defaultValue = value === "diagram" ? "neutral" : "inactive";
+          return (
+            <>
+              <StyledDiagramWrapper>
+                <StyledDiagramIconWrapper>
+                  <ImInfinite />
+                  <AiOutlineArrowRight />
+                </StyledDiagramIconWrapper>
+                <StyledDiagramRectangle type={defaultValue}>
+                  Discovery
+                </StyledDiagramRectangle>
+                <StyledDiagramIconWrapper>
+                  <AiOutlineArrowRight />
+                </StyledDiagramIconWrapper>
+                <StyledDiagramRectangle type={defaultValue}>
+                  Design
+                </StyledDiagramRectangle>
+                <StyledDiagramIconWrapper>
+                  <AiOutlineArrowRight />
+                </StyledDiagramIconWrapper>
+                <StyledDiagramRectangle
+                  type={shouldHighlight(
+                    value,
+                    ["development", "testing", "maintenance"],
+                    defaultValue
+                  )}
+                >
                   Development
-                </FlexBox>
-              )}
-              {step > 2 && <FlexBox>Testing & QA</FlexBox>}
-              {step > 3 && <FlexBox>Maintenance</FlexBox>}
-            </Grid>
-          </>
-        )}
+                </StyledDiagramRectangle>
+                <StyledDiagramIconWrapper>
+                  <AiOutlineArrowRight />
+                </StyledDiagramIconWrapper>
+                <StyledDiagramRectangle
+                  type={shouldHighlight(
+                    value,
+                    ["testing", "maintenance"],
+                    defaultValue
+                  )}
+                >
+                  Testing / QA
+                </StyledDiagramRectangle>
+                <StyledDiagramIconWrapper>
+                  <AiOutlineArrowRight />
+                </StyledDiagramIconWrapper>
+                <StyledDiagramRectangle type={defaultValue}>
+                  Release
+                </StyledDiagramRectangle>
+                <StyledDiagramIconWrapper>
+                  <AiOutlineArrowRight />
+                </StyledDiagramIconWrapper>
+                <StyledDiagramRectangle
+                  type={shouldHighlight(value, ["maintenance"], defaultValue)}
+                >
+                  Maintenace
+                </StyledDiagramRectangle>
+                <StyledDiagramIconWrapper>
+                  <AiOutlineArrowRight />
+                  <ImInfinite />
+                </StyledDiagramIconWrapper>
+              </StyledDiagramWrapper>
+            </>
+          );
+        }}
       </Stepper>
       <PurposeAreaOfEffectNotes />
     </Slide>
   );
 };
+
+function shouldHighlight(
+  value: unknown,
+  allowedValues: StepperValues[],
+  defaultType: StyledDiagramRectangleType
+): StyledDiagramRectangleType {
+  if (allowedValues.includes(value as StepperValues)) {
+    return "highlighted";
+  }
+  return defaultType;
+}
 
 const PurposeAreaOfEffectNotes = () => (
   <Notes>
@@ -93,19 +120,28 @@ const PurposeAreaOfEffectNotes = () => (
   </Notes>
 );
 
-const StyledDiagramWrapper = styled.div`
+const StyledDiagramIconWrapper = styled.div`
   display: flex;
   align-items: center;
+`;
+
+const StyledDiagramWrapper = styled.div`
+  display: flex;
+  align-items: stretch;
+  font-size: 25px;
   gap: 8px;
   justify-content: center;
 `;
 
+type StyledDiagramRectangleType = "neutral" | "highlighted" | "inactive";
+
 type StyledDiagramRectangleProps = {
-  type: "neutral" | "highlighted" | "inactive";
+  type: StyledDiagramRectangleType;
 };
 
 const StyledDiagramRectangle = styled.div<StyledDiagramRectangleProps>`
-  background: ${colors.secondary};
+  background: ${(props) =>
+    props.type === "highlighted" ? colors.primary : colors.secondary};
   color: ${colors.quaternary};
   padding: 10px;
   opacity: ${getOpacity};

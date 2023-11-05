@@ -12,9 +12,9 @@ export const colors = {
 };
 
 export const chartColors = {
-  primary: variant.maroon.hex,
-  secondary: variant.peach.hex,
-  tertiary: variant.red.hex,
+  primary: variant.red.hex,
+  secondary: variant.blue.hex,
+  tertiary: variant.green.hex,
 };
 
 export const codeBlockColors = {

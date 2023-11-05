@@ -15,9 +15,6 @@ export const OutroSlide = () => (
         </Quote>
       </Appear>
       <Appear>
-        <ListItem>
-          If you want to be at the bleeding edge, you must bleed responsibly
-        </ListItem>
         <ListItem>Thank you for joining</ListItem>
       </Appear>
     </UnorderedList>

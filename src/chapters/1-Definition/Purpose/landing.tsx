@@ -8,16 +8,13 @@ export const PurposeLandingSlide = () => (
     </Heading>
     <OrderedList>
       <Appear>
-        <ListItem>Disclaimer</ListItem>
-      </Appear>
-      <Appear>
         <ListItem>Area of Effect</ListItem>
       </Appear>
       <Appear>
-        <ListItem>Uncomfortable truth (zero sum game) </ListItem>
+        <ListItem>Archetypes</ListItem>
       </Appear>
       <Appear>
-        <ListItem>Archetypes</ListItem>
+        <ListItem>Uncomfortable truth</ListItem>
       </Appear>
     </OrderedList>
   </Slide>
