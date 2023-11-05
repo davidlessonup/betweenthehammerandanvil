@@ -15,28 +15,25 @@ import {
   Notes,
 } from "spectacle";
 import { ProgressTemplate } from "@Templates/Progress/Progress";
-import { LandingSlide } from "@Slides/Landing";
-import { IntroductionChapter } from "@Slides/Introduction";
+import { IntroductionChapter } from "@Chapters/0-Intro";
+import { DefinitionChapter } from "@Chapters/1-Definition";
 import { TableOfContentsSlide } from "@Slides/TableOfContents";
-import { DeveloperExperienceChapter } from "@Slides/DeveloperExperience";
-import { PurposeChapter } from "@Slides/Purpose";
-import { BlacksmithingChapter } from "@Slides/Blacksmithing";
 import { OutroSlide } from "@Slides/Outro";
-import { theme, codePaneTheme, slideTransition } from "@Templates/Theme";
-import { LinthomancyChapter } from "@Slides/Linthomancy";
+import { theme, codePaneTheme, slideTransition } from "@Templates/Theme/Theme";
+import { LinthomancyChapter } from "@Chapters/2-Realization/Linthomancy";
 
 const formidableLogo =
   "https://avatars2.githubusercontent.com/u/5078602?s=280&v=4";
 
 export const SlideDeck = () => (
   <Deck theme={theme} template={ProgressTemplate} transition={slideTransition}>
-    <LandingSlide />
     <IntroductionChapter />
-    <TableOfContentsSlide />
-    <DeveloperExperienceChapter />
-    <BlacksmithingChapter />
-    <PurposeChapter />
+    <TableOfContentsSlide chapter={1} />
+    <DefinitionChapter />
+    <TableOfContentsSlide chapter={2} />
     <LinthomancyChapter />
+    <TableOfContentsSlide chapter={3} />
+    <TableOfContentsSlide chapter={4} />
     <OutroSlide />
     <Slide>
       <FlexBox height="100%">

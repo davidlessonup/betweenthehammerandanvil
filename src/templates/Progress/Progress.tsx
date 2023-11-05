@@ -1,6 +1,6 @@
 import React from "react";
 import { FlexBox, Box, FullScreen } from "spectacle";
-import { ProgressBar } from "@Components/ProgressBar";
+import { ProgressBar } from "@Components/ProgressBar/ProgressBar";
 
 export const ProgressTemplate: React.FC<{
   slideNumber: number;

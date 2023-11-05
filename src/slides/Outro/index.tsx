@@ -1,5 +1,5 @@
 import { Heading, UnorderedList, ListItem, Appear, Slide } from "spectacle";
-import { LinuxCommandSpan } from "@Components/LinuxCommandSpan";
+import { LinuxCommandSpan } from "@Components/LinuxCommandSpan/LinuxCommandSpan";
 import { Quote } from "@Components/Quote/Quote";
 
 export const OutroSlide = () => (
@@ -11,7 +11,7 @@ export const OutroSlide = () => (
       <Appear>
         <Quote author="Jean-Paul Sartre">
           As far as men go, it is not what they are that interests me, but what
-          they can become.
+          they can become
         </Quote>
       </Appear>
       <Appear>

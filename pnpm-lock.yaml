@@ -15,6 +15,7 @@ specifiers:
   eslint-plugin-react-refresh: ^0.4.3
   react: ^18.2.0
   react-dom: ^18.2.0
+  react-icons: ^4.11.0
   spectacle: ^10.1.6
   typescript: ^5.2.2
   usehooks-ts: ^2.9.1
@@ -25,6 +26,7 @@ dependencies:
   '@emotion/styled': 11.11.0_wvoqx4fwjhz4m3vj7btkmpw52m
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-icons: 4.11.0_react@18.2.0
   spectacle: 10.1.6_mi74boqf2vfg3nvlr7tbycjxwy
   usehooks-ts: 2.9.1_biqbaboplfbrettd7655fr4n2y
 
@@ -2421,6 +2423,14 @@ packages:
 
   /react-fast-compare/3.2.2:
     resolution: {integrity: sha512-nsO+KSNgo1SbJqJEYRE9ERzo7YtYbou/OqjSQKxV7jcKox7+usiUVZOAC+XnDOABXggQTno0Y1CpVnuWEc1boQ==}
+    dev: false
+
+  /react-icons/4.11.0_react@18.2.0:
+    resolution: {integrity: sha512-V+4khzYcE5EBk/BvcuYRq6V/osf11ODUM2J8hg2FDSswRrGvqiYUYPRy4OdrWaQOBj4NcpJfmHZLNaD+VH0TyA==}
+    peerDependencies:
+      react: '*'
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /react-is/16.13.1:

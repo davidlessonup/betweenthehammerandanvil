@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { colors } from "@Foundations/colors";
-import { IconQuoteRight } from "@Components/Icons/QuoteRight";
-import { IconQuoteLeft } from "@Components/Icons/QuoteLeft";
+import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 
 export interface QuoteProps {
   author: string;
@@ -14,13 +13,22 @@ export const Quote: React.FC<React.PropsWithChildren<QuoteProps>> = ({
 }) => (
   <StyledQuote>
     <span data-quote>
-      <IconQuoteLeft fill={colors.primary} height="24px" width="24px" />
-      {children}
-      <IconQuoteRight fill={colors.primary} height="24px" width="24px" />
+      <StyledQuoteIconWrapper>
+        <FaQuoteLeft fill={colors.secondary} size="24" />
+      </StyledQuoteIconWrapper>
+      <span>{children}</span>
+      <StyledQuoteIconWrapper>
+        <FaQuoteRight fill={colors.secondary} size="24px" />
+      </StyledQuoteIconWrapper>
     </span>
     <span data-author>{author}</span>
   </StyledQuote>
 );
+
+const StyledQuoteIconWrapper = styled.span`
+  margin-left: 10px;
+  margin-right: 10px;
+`;
 
 const StyledQuote = styled.div`
   position: relative;
@@ -38,15 +46,15 @@ const StyledQuote = styled.div`
 
   &::before {
     left: 0;
-    border-left: 1px solid ${colors.primary};
-    border-top: 1px solid ${colors.primary};
+    border-left: 1px solid ${colors.secondary};
+    border-top: 1px solid ${colors.secondary};
   }
 
   &::after {
     right: 0;
     top: calc(100% - 8vw);
-    border-right: 1px solid ${colors.primary};
-    border-bottom: 1px solid ${colors.primary};
+    border-right: 1px solid ${colors.secondary};
+    border-bottom: 1px solid ${colors.secondary};
   }
 
   & > [data-quote] {
@@ -58,5 +66,6 @@ const StyledQuote = styled.div`
     padding: 5px;
     align-self: flex-end;
     font-size: 33px;
+    color: ${colors.secondary};
   }
 `;

@@ -21,6 +21,7 @@
     "noFallthroughCasesInSwitch": true,
     "paths": {
       "@Assets/*": ["./src/assets/*"],
+      "@Chapters/*": ["./src/chapters/*"],
       "@Components/*": ["./src/components/*"],
       "@Foundations/*": ["./src/foundations/*"],
       "@Slides/*": ["./src/slides/*"],
