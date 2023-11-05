@@ -20,7 +20,7 @@ import { DefinitionChapter } from "@Chapters/1-Definition";
 import { RealizationChapter } from "@Chapters/2-Realization";
 import { OutroChapter } from "@Chapters/Outro";
 import { TableOfContentsSlide } from "@Slides/TableOfContents";
-import { theme, codePaneTheme, slideTransition } from "@Templates/Theme/Theme";
+import { theme, slideTransition } from "@Templates/Theme/Theme";
 import styled from "@emotion/styled";
 import { fonts } from "@Foundations/typography";
 
@@ -138,11 +138,7 @@ export const SlideDeck = () => (
         </Grid>
       </Slide>
       <Slide>
-        <CodePane
-          language="jsx"
-          highlightRanges={[1, [6, 8]]}
-          theme={codePaneTheme}
-        >{`
+        <CodePane language="jsx" highlightRanges={[1, [6, 8]]}>{`
         import { createClient, Provider } from 'urql';
 
         const client = createClient({ url: 'https://0ufyz.sse.codesandbox.io' });

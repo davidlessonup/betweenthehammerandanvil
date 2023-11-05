@@ -1,4 +1,4 @@
-import { SpectacleTheme, codePaneThemes, SlideTransition } from "spectacle";
+import { SpectacleTheme, SlideTransition } from "spectacle";
 import { DeepPartial } from "@Utils/typescript/deepPartial";
 import { colors } from "@Foundations/colors";
 import { fonts } from "@Foundations/typography";
@@ -25,5 +25,3 @@ export const slideTransition: SlideTransition = {
     transform: "translate(-100%, 0%)",
   },
 };
-
-export const codePaneTheme = codePaneThemes.materialDark;
