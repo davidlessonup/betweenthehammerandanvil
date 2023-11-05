@@ -4,7 +4,7 @@ import { LinthomancyFailSlide } from "./fail";
 import { LintStrengthCodeExampleSlide } from "./example";
 import { LintConclusionSlide } from "./conclusion";
 
-export const LinthomancyChapter = () => (
+export const LinthomancySubChapter = () => (
   <>
     <LintLandingSlide />
     <LinthomanyDefinitionSlide />

@@ -1,6 +1,6 @@
 import { DeveloperExperienceDefinitionSlide } from "./definition";
 
-export const DeveloperExperienceChapter = () => (
+export const DeveloperExperienceSubChapter = () => (
   <>
     <DeveloperExperienceDefinitionSlide />
   </>

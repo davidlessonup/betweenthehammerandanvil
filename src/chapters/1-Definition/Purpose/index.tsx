@@ -3,7 +3,7 @@ import { PurposeAreaOfEffectSlide } from "./areaOfEffect";
 import { PurposeUncomfortableTruthSlide } from "./uncomfortableTruth";
 import { PurposeArchetypesSlide } from "./archetypes";
 
-export const PurposeChapter = () => (
+export const PurposeSubChapter = () => (
   <>
     <PurposeLandingSlide />
     <PurposeAreaOfEffectSlide />

@@ -1,11 +1,11 @@
-import { PurposeChapter } from "./Purpose";
-import { DeveloperExperienceChapter } from "./DeveloperExperience";
-import { BlacksmithingChapter } from "./Blacksmithing";
+import { PurposeSubChapter } from "./Purpose";
+import { DeveloperExperienceSubChapter } from "./DeveloperExperience";
+import { BlacksmithingSubChapter } from "./Blacksmithing";
 
 export const DefinitionChapter = () => (
   <>
-    <PurposeChapter />
-    <DeveloperExperienceChapter />
-    <BlacksmithingChapter />
+    <PurposeSubChapter />
+    <DeveloperExperienceSubChapter />
+    <BlacksmithingSubChapter />
   </>
 );

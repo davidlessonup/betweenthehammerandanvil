@@ -3,7 +3,7 @@ import { BlacksmithDefinitionSlide } from "./definition";
 import { BlacksmithIdealSlide } from "./ideal";
 import { SoftwareCraftsmanshipDefinitionSlide } from "./craftsmanship";
 
-export const BlacksmithingChapter = () => (
+export const BlacksmithingSubChapter = () => (
   <>
     <BlacksmithingLandingSlide />
     <BlacksmithDefinitionSlide />
