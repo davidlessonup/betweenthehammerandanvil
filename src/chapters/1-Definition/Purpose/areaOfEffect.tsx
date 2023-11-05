@@ -24,7 +24,7 @@ export const PurposeAreaOfEffectSlide = () => {
         tagName="div"
         values={["diagram", "effect", "development", "testing", "maintenance"]}
       >
-        {(value, step, isActive) => (
+        {(_, step) => (
           <>
             <StyledDiagramWrapper>
               <ImInfinite />

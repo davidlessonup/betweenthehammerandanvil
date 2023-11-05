@@ -187,7 +187,7 @@ export const PurposeArchetypesSlide = () => (
       <LinuxCommandSpan>cat archetypes.txt</LinuxCommandSpan>
     </Heading>
     <Stepper tagName="div" values={stepperValues as unknown as string[]}>
-      {(value, step, isActive) =>
+      {(value) =>
         diagramStepMapper[value as DiagramSteps] && (
           <StyledRadarChart>
             <RadarChart
