@@ -1,1 +1,1 @@
-export const TestingSubChapter = () => <></>;
+export const TestingSubChapter = () => null;

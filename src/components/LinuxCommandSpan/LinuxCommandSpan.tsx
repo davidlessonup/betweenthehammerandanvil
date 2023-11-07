@@ -1,22 +1,22 @@
-import React from "react";
-import { CodeSpan } from "spectacle";
-import styled from "@emotion/styled";
-import { DebouncedIntersection } from "@Components/Debounced/Debounced";
+import React from 'react';
+import { CodeSpan } from 'spectacle';
+import styled from '@emotion/styled';
+import { DebouncedIntersection } from '@Components/Debounced/Debounced';
 
 export interface LinuxCommandSpanProps {
   children: string;
 }
 
 export const LinuxCommandSpan: React.FC<LinuxCommandSpanProps> = ({
-  children,
+    children,
 }) => (
-  <CodeSpanWrapper>
-    <CodeSpan>
-      <DebouncedIntersection ms={500}>
-        <TypingEffect length={children.length + 1}>{children}</TypingEffect>
-      </DebouncedIntersection>
-    </CodeSpan>
-  </CodeSpanWrapper>
+    <CodeSpanWrapper>
+        <CodeSpan>
+            <DebouncedIntersection ms={500}>
+                <TypingEffect length={children.length + 1}>{ children }</TypingEffect>
+            </DebouncedIntersection>
+        </CodeSpan>
+    </CodeSpanWrapper>
 );
 
 const CodeSpanWrapper = styled.div`

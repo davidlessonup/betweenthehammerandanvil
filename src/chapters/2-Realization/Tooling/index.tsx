@@ -1,1 +1,1 @@
-export const ToolingSubChapter = () => <></>;
+export const ToolingSubChapter = () => null;
