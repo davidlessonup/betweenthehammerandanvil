@@ -7,12 +7,15 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@catppuccin/palette": "^0.2.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "eslint-config-prettier": "^9.0.0",
+    "prettier": "^3.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.11.0",
@@ -41,6 +44,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "eslint-plugin-unicorn": "^49.0.0",
+    "husky": "^8.0.3",
     "remark-cli": "^12.0.0",
     "remark-lint": "^9.1.2",
     "remark-preset-lint-consistent": "^5.1.2",

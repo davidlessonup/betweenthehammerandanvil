@@ -1,6 +1,6 @@
-import styled from '@emotion/styled';
-import React from 'react';
-import { FlexBox } from 'spectacle';
+import styled from "@emotion/styled";
+import React from "react";
+import { FlexBox } from "spectacle";
 
 interface BackgroundImageProps {
   src: string;

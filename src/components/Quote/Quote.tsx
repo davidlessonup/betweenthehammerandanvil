@@ -1,28 +1,28 @@
-import React from 'react';
-import styled from '@emotion/styled';
-import { colors } from '@Foundations/colors';
-import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa';
+import React from "react";
+import styled from "@emotion/styled";
+import { colors } from "@Foundations/colors";
+import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 
 export interface QuoteProps {
   author: string;
 }
 
 export const Quote: React.FC<React.PropsWithChildren<QuoteProps>> = ({
-    author,
-    children,
+  author,
+  children,
 }) => (
-    <StyledQuote>
-        <span data-quote>
-            <StyledQuoteIconWrapper>
-                <FaQuoteLeft fill={colors.secondary} size="24" />
-            </StyledQuoteIconWrapper>
-            <span>{ children }</span>
-            <StyledQuoteIconWrapper>
-                <FaQuoteRight fill={colors.secondary} size="24px" />
-            </StyledQuoteIconWrapper>
-        </span>
-        <span data-author>{ author }</span>
-    </StyledQuote>
+  <StyledQuote>
+    <span data-quote>
+      <StyledQuoteIconWrapper>
+        <FaQuoteLeft fill={colors.secondary} size="24" />
+      </StyledQuoteIconWrapper>
+      <span>{children}</span>
+      <StyledQuoteIconWrapper>
+        <FaQuoteRight fill={colors.secondary} size="24px" />
+      </StyledQuoteIconWrapper>
+    </span>
+    <span data-author>{author}</span>
+  </StyledQuote>
 );
 
 const StyledQuoteIconWrapper = styled.span`

@@ -1,33 +1,33 @@
-import { Deck } from 'spectacle';
-import { ProgressTemplate } from '@Templates/Progress/Progress';
-import { IntroductionChapter } from '@Chapters/Intro';
-import { DefinitionChapter } from '@Chapters/1-Definition';
-import { RealizationChapter } from '@Chapters/2-Realization';
-import { CautionChapter } from '@Chapters/3-Caution';
-import { OutroChapter } from '@Chapters/Outro';
-import { TableOfContentsSlide } from '@Slides/TableOfContents';
-import { theme, slideTransition } from '@Templates/Theme/Theme';
-import styled from '@emotion/styled';
-import { fonts } from '@Foundations/typography';
+import { Deck } from "spectacle";
+import { ProgressTemplate } from "@Templates/Progress/Progress";
+import { IntroductionChapter } from "@Chapters/Intro";
+import { DefinitionChapter } from "@Chapters/1-Definition";
+import { RealizationChapter } from "@Chapters/2-Realization";
+import { CautionChapter } from "@Chapters/3-Caution";
+import { OutroChapter } from "@Chapters/Outro";
+import { TableOfContentsSlide } from "@Slides/TableOfContents";
+import { theme, slideTransition } from "@Templates/Theme/Theme";
+import styled from "@emotion/styled";
+import { fonts } from "@Foundations/typography";
 
 export const SlideDeck = () => (
-    <StyledDeckWrapper>
-        <Deck
-            theme={theme}
-            template={ProgressTemplate}
-            transition={slideTransition}
-        >
-            <IntroductionChapter />
-            <TableOfContentsSlide chapter={1} />
-            <DefinitionChapter />
-            <TableOfContentsSlide chapter={2} />
-            <RealizationChapter />
-            <TableOfContentsSlide chapter={3} />
-            <CautionChapter />
-            <TableOfContentsSlide chapter={4} />
-            <OutroChapter />
-        </Deck>
-    </StyledDeckWrapper>
+  <StyledDeckWrapper>
+    <Deck
+      theme={theme}
+      template={ProgressTemplate}
+      transition={slideTransition}
+    >
+      <IntroductionChapter />
+      <TableOfContentsSlide chapter={1} />
+      <DefinitionChapter />
+      <TableOfContentsSlide chapter={2} />
+      <RealizationChapter />
+      <TableOfContentsSlide chapter={3} />
+      <CautionChapter />
+      <TableOfContentsSlide chapter={4} />
+      <OutroChapter />
+    </Deck>
+  </StyledDeckWrapper>
 );
 
 const StyledDeckWrapper = styled.div`

@@ -1,5 +1,5 @@
-import { DeveloperExperienceDefinitionSlide } from './definition';
+import { DeveloperExperienceDefinitionSlide } from "./definition";
 
 export const DeveloperExperienceSubChapter = () => (
-    <DeveloperExperienceDefinitionSlide />
+  <DeveloperExperienceDefinitionSlide />
 );

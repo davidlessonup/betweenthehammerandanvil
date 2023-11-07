@@ -1,9 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { SlideDeck } from './SlideDeck.tsx';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { SlideDeck } from "./SlideDeck.tsx";
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-    <React.StrictMode>
-        <SlideDeck />
-    </React.StrictMode>,
+ReactDOM.createRoot(document.getElementById("root")!).render(
+  <React.StrictMode>
+    <SlideDeck />
+  </React.StrictMode>,
 );

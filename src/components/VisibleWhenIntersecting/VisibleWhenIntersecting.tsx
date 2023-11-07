@@ -1,13 +1,13 @@
-import { useRef, PropsWithChildren } from 'react';
-import { useIntersectionObserver } from 'usehooks-ts';
+import { useRef, PropsWithChildren } from "react";
+import { useIntersectionObserver } from "usehooks-ts";
 
 export const VisibleWhenIntersecting: React.FC<PropsWithChildren> = ({
-    children,
+  children,
 }) => {
-    const ref = useRef<HTMLDivElement | null>(null);
-    const entry = useIntersectionObserver(ref, {});
+  const ref = useRef<HTMLDivElement | null>(null);
+  const entry = useIntersectionObserver(ref, {});
 
-    const isVisible = !!entry?.isIntersecting;
+  const isVisible = !!entry?.isIntersecting;
 
-    return <div ref={ref}>{ isVisible && children }</div>;
+  return <div ref={ref}>{isVisible && children}</div>;
 };

@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from '@emotion/styled';
-import { colors } from '@Foundations/colors';
+import React from "react";
+import styled from "@emotion/styled";
+import { colors } from "@Foundations/colors";
 
 export interface AcronymProps {
   acronym: string;
@@ -8,22 +8,24 @@ export interface AcronymProps {
 }
 
 export const Acronym: React.FC<AcronymProps> = ({ acronym, children }) => {
-    const words = children.split(' ');
+  const words = children.split(" ");
 
-    return (
-        <StyledAcronymWrapper>
-            <StyledAcronym>
-                {
-                    words.map((word) => (
-                        <StyledAcronymWord key={`${acronym}-${word}`}>
-                            { word }
-                        </StyledAcronymWord>
-                    ))
-                }
-                <StyledFullAcronym>{ '(' }{ acronym }{ ')' }</StyledFullAcronym>
-            </StyledAcronym>
-        </StyledAcronymWrapper>
-    );
+  return (
+    <StyledAcronymWrapper>
+      <StyledAcronym>
+        {words.map((word) => (
+          <StyledAcronymWord key={`${acronym}-${word}`}>
+            {word}
+          </StyledAcronymWord>
+        ))}
+        <StyledFullAcronym>
+          {"("}
+          {acronym}
+          {")"}
+        </StyledFullAcronym>
+      </StyledAcronym>
+    </StyledAcronymWrapper>
+  );
 };
 
 const StyledAcronym = styled.div`

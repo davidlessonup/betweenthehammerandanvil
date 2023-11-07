@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from '@emotion/styled';
-import { colors } from '@Foundations/colors';
-import { GiAnvilImpact } from 'react-icons/gi';
+import React from "react";
+import styled from "@emotion/styled";
+import { colors } from "@Foundations/colors";
+import { GiAnvilImpact } from "react-icons/gi";
 
 export interface ProgressBarProps {
   current: number;
@@ -9,42 +9,38 @@ export interface ProgressBarProps {
 }
 
 export const ProgressBar: React.FC<ProgressBarProps> = ({ current, total }) => {
-    const actualCurrent = current - 1;
-    const actualTotal = total > 0 ? total - 1 : 0;
+  const actualCurrent = current - 1;
+  const actualTotal = total > 0 ? total - 1 : 0;
 
-    return (
-        <ProgressBarPlaceholder>
-            <ProgressBarWrapper current={actualCurrent}>
-                <ProgressText total={actualTotal}>
-                    { actualCurrent }
-                    { '/' }
-                    { actualTotal }
-                </ProgressText>
-                <ProgressWrapper>
-                    {
-                        [...new Array(actualTotal)].map((_, idx) => {
-                            const isCurrent = idx + 1 === actualCurrent;
+  return (
+    <ProgressBarPlaceholder>
+      <ProgressBarWrapper current={actualCurrent}>
+        <ProgressText total={actualTotal}>
+          {actualCurrent}
+          {"/"}
+          {actualTotal}
+        </ProgressText>
+        <ProgressWrapper>
+          {[...new Array(actualTotal)].map((_, idx) => {
+            const isCurrent = idx + 1 === actualCurrent;
 
-                            return (
-                                <div
-                                    data-current={isCurrent}
-                                    key={`progress-bar-${current}-${total}-${idx}`}
-                                >
-                                    {
-                                        isCurrent && (
-                                            <div>
-                                                <GiAnvilImpact size="12" fill={colors.primary} />
-                                            </div>
-                                        )
-                                    }
-                                </div>
-                            );
-                        })
-                    }
-                </ProgressWrapper>
-            </ProgressBarWrapper>
-        </ProgressBarPlaceholder>
-    );
+            return (
+              <div
+                data-current={isCurrent}
+                key={`progress-bar-${current}-${total}-${idx}`}
+              >
+                {isCurrent && (
+                  <div>
+                    <GiAnvilImpact size="12" fill={colors.primary} />
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </ProgressWrapper>
+      </ProgressBarWrapper>
+    </ProgressBarPlaceholder>
+  );
 };
 
 const ProgressBarPlaceholder = styled.div`
@@ -66,8 +62,8 @@ const ProgressBarWrapper = styled.div<{ current: number }>`
       opacity: 1;
     }
   }
-  display: ${(props) => (props.current === 0 ? 'none' : 'flex')};
-  visibility: ${(props) => (props.current === 0 ? 'hidden' : 'visible')};
+  display: ${(props) => (props.current === 0 ? "none" : "flex")};
+  visibility: ${(props) => (props.current === 0 ? "hidden" : "visible")};
   color: ${colors.primary};
   animation: fadeInFromNone 2s ease-out;
 `;

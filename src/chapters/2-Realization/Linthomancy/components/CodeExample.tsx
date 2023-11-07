@@ -1,5 +1,5 @@
-import styled from '@emotion/styled';
-import { codeBlockColors } from '@Foundations/colors';
+import styled from "@emotion/styled";
+import { codeBlockColors } from "@Foundations/colors";
 
 const SpacingElement = () => <>&nbsp;</>;
 
@@ -9,14 +9,14 @@ interface CodeErrorPlaceholderProps {
 }
 
 const CodeErrorPlaceholder: React.FC<CodeErrorPlaceholderProps> = ({
-    showErrors,
-    children,
+  showErrors,
+  children,
 }) => {
-    if (!showErrors) {
-        return null;
-    }
+  if (!showErrors) {
+    return null;
+  }
 
-    return <StyledCodeErrorPlaceholder>{ children }</StyledCodeErrorPlaceholder>;
+  return <StyledCodeErrorPlaceholder>{children}</StyledCodeErrorPlaceholder>;
 };
 
 interface CodeConditionalBlockProps {
@@ -27,166 +27,166 @@ interface CodeConditionalBlockProps {
 const CodeConditionalBlock: React.FC<
   React.PropsWithChildren<CodeConditionalBlockProps>
 > = ({ highlight, showBlock, children }) => {
-    if (!showBlock) {
-        return null;
-    }
+  if (!showBlock) {
+    return null;
+  }
 
-    if (highlight) {
-        return <StyledConditionalCodeBlock>{ children }</StyledConditionalCodeBlock>;
-    }
+  if (highlight) {
+    return <StyledConditionalCodeBlock>{children}</StyledConditionalCodeBlock>;
+  }
 
-    return children;
+  return children;
 };
 
-export type CodeExampleVersion = 'default' | 'errors' | 'fixed';
+export type CodeExampleVersion = "default" | "errors" | "fixed";
 
 interface CodeExampleProps {
   version: CodeExampleVersion;
 }
 
 export const CodeExample: React.FC<CodeExampleProps> = ({ version }) => (
-    <StyledCodeSection>
-        <StyledCodeBlockLine indent={0}>
-            <StyledCodeDeclarationBlock>{ 'type' }</StyledCodeDeclarationBlock>
-            <SpacingElement />
-            <StyledCodeNormalBlock>{ 'Params' }</StyledCodeNormalBlock>
-            <SpacingElement />
-            <StyledCodeSpecialCharacterBlock>{ '= {' }</StyledCodeSpecialCharacterBlock>
-            <SpacingElement />
-            <StyledCodeNeutralBlock>{ 'target' }</StyledCodeNeutralBlock>
-            <StyledCodeSpecialCharacterBlock>{ ':' }</StyledCodeSpecialCharacterBlock>
-            <SpacingElement />
-            <StyledCodeTypeBlock>{ 'string' }</StyledCodeTypeBlock>
-            <SpacingElement />
-            <StyledCodeSpecialCharacterBlock>{ '}' }</StyledCodeSpecialCharacterBlock>
-            <CodeErrorPlaceholder showErrors={version === 'errors'}>
-                { 'Missing semi-colon' }
-            </CodeErrorPlaceholder>
-            <CodeConditionalBlock showBlock={version === 'fixed'} highlight>
-                <StyledCodeSpecialCharacterBlock>{ ';' }</StyledCodeSpecialCharacterBlock>
-            </CodeConditionalBlock>
-        </StyledCodeBlockLine>
-        <CodeConditionalBlock showBlock={version === 'fixed'} highlight>
-            <SpacingElement />
-        </CodeConditionalBlock>
-        <StyledCodeBlockLine indent={0}>
-            <StyledCodeDeclarationBlock>{ 'export ' }</StyledCodeDeclarationBlock>
-            <SpacingElement />
-            <StyledCodeDeclarationBlock>{ 'function' }</StyledCodeDeclarationBlock>
-            <SpacingElement />
-            <StyledCodeDeclarationBlock>
-                { 'count_occurences_of_i' }
-            </StyledCodeDeclarationBlock>
-            <SpacingElement />
-            <StyledCodeSpecialCharacterBlock>{ '(' }</StyledCodeSpecialCharacterBlock>
-            <SpacingElement />
-            <StyledCodeNeutralBlock>{ 'params' }</StyledCodeNeutralBlock>
-            <StyledCodeSpecialCharacterBlock>{ ':' }</StyledCodeSpecialCharacterBlock>
-            <SpacingElement />
-            <StyledCodeTypeBlock>{ 'Params' }</StyledCodeTypeBlock>
-            <StyledCodeSpecialCharacterBlock>{ ')' }</StyledCodeSpecialCharacterBlock>
-            <SpacingElement />
-            <StyledCodeSpecialCharacterBlock>{ '{' }</StyledCodeSpecialCharacterBlock>
-            <CodeErrorPlaceholder showErrors={version === 'errors'}>
-                { 'Missing indentation between type and function declarations' }
-            </CodeErrorPlaceholder>
-        </StyledCodeBlockLine>
-        <StyledCodeBlockLine indent={1}>
-            <StyledCodeDeclarationBlock>{ 'var' }</StyledCodeDeclarationBlock>
-            <SpacingElement />
-            <StyledCodeNeutralBlock>{ 'count' }</StyledCodeNeutralBlock>
-            <SpacingElement />
-            <StyledCodeSpecialCharacterBlock>{ '=' }</StyledCodeSpecialCharacterBlock>
-            <SpacingElement />
-            <StyledCodeAssignmentBlock>{ '0' }</StyledCodeAssignmentBlock>
-            <CodeErrorPlaceholder showErrors={version === 'errors'}>
-                { 'Missing semi-colon' }
-            </CodeErrorPlaceholder>
-            <CodeConditionalBlock showBlock={version === 'fixed'} highlight>
-                <StyledCodeSpecialCharacterBlock>{ ';' }</StyledCodeSpecialCharacterBlock>
-            </CodeConditionalBlock>
-        </StyledCodeBlockLine>
-        <StyledCodeBlockLine indent={1}>
-            <StyledCodeDeclarationBlock>{ 'for' }</StyledCodeDeclarationBlock>
-            <SpacingElement />
-            <StyledCodeSpecialCharacterBlock>{ '(' }</StyledCodeSpecialCharacterBlock>
-            <StyledCodeDeclarationBlock>{ 'var' }</StyledCodeDeclarationBlock>
-            <SpacingElement />
-            <StyledCodeSpecialCharacterBlock>{ '=' }</StyledCodeSpecialCharacterBlock>
-            <SpacingElement />
-            <StyledCodeAssignmentBlock>{ '0' }</StyledCodeAssignmentBlock>
-            <StyledCodeSpecialCharacterBlock>{ ';' }</StyledCodeSpecialCharacterBlock>
-            <SpacingElement />
-            <StyledCodeNeutralBlock>{ 'i' }</StyledCodeNeutralBlock>
-            <SpacingElement />
-            <StyledCodeSpecialCharacterBlock>{ '<' }</StyledCodeSpecialCharacterBlock>
-            <SpacingElement />
-            <StyledCodeNeutralBlock>{ 'params' }</StyledCodeNeutralBlock>
-            <StyledCodeSpecialCharacterBlock>{ '.' }</StyledCodeSpecialCharacterBlock>
-            <StyledCodeNeutralBlock>{ 'target' }</StyledCodeNeutralBlock>
-            <StyledCodeSpecialCharacterBlock>{ '.' }</StyledCodeSpecialCharacterBlock>
-            <StyledCodeNeutralBlock>{ 'length' }</StyledCodeNeutralBlock>
-            <StyledCodeSpecialCharacterBlock>{ ';' }</StyledCodeSpecialCharacterBlock>
-            <SpacingElement />
-            <StyledCodeNeutralBlock>{ 'i' }</StyledCodeNeutralBlock>
-            <StyledCodeSpecialCharacterBlock>{ '++' }</StyledCodeSpecialCharacterBlock>
-            <StyledCodeSpecialCharacterBlock>{ ')' }</StyledCodeSpecialCharacterBlock>
-            <SpacingElement />
-            <StyledCodeSpecialCharacterBlock>{ '{' }</StyledCodeSpecialCharacterBlock>
-        </StyledCodeBlockLine>
-        <StyledCodeBlockLine indent={2}>
-            <StyledCodeDeclarationBlock>{ 'if' }</StyledCodeDeclarationBlock>
-            <SpacingElement />
-            <StyledCodeSpecialCharacterBlock>{ '(' }</StyledCodeSpecialCharacterBlock>
-            <StyledCodeNeutralBlock>{ 'params' }</StyledCodeNeutralBlock>
-            <StyledCodeSpecialCharacterBlock>{ '.' }</StyledCodeSpecialCharacterBlock>
-            <StyledCodeNeutralBlock>{ 'target' }</StyledCodeNeutralBlock>
-            <StyledCodeSpecialCharacterBlock>{ '[' }</StyledCodeSpecialCharacterBlock>
-            <StyledCodeNeutralBlock>{ 'i' }</StyledCodeNeutralBlock>
-            <StyledCodeSpecialCharacterBlock>{ ']' }</StyledCodeSpecialCharacterBlock>
-            <SpacingElement />
-            <CodeConditionalBlock showBlock={version === 'fixed'} highlight>
-                <StyledCodeSpecialCharacterBlock>{ '!' }</StyledCodeSpecialCharacterBlock>
-            </CodeConditionalBlock>
-            <StyledCodeSpecialCharacterBlock>{ '==' }</StyledCodeSpecialCharacterBlock>
-            <SpacingElement />
-            <StyledCodeLiteralValueBlock>{ '\'i\'' }</StyledCodeLiteralValueBlock>
-            <StyledCodeSpecialCharacterBlock>{ ')' }</StyledCodeSpecialCharacterBlock>
-            <SpacingElement />
-            <StyledCodeSpecialCharacterBlock>{ '{' }</StyledCodeSpecialCharacterBlock>
-            <CodeErrorPlaceholder showErrors={version === 'errors'}>
-                { 'Avoid empty if statements, prefer stricter equality (===)' }
-            </CodeErrorPlaceholder>
-        </StyledCodeBlockLine>
-        <CodeConditionalBlock showBlock={version !== 'fixed'} highlight={false}>
-            <StyledCodeBlockLine indent={2}>
-                <StyledCodeSpecialCharacterBlock>{ '}' }</StyledCodeSpecialCharacterBlock>
-                <SpacingElement />
-                <StyledCodeDeclarationBlock>{ 'else' }</StyledCodeDeclarationBlock>
-                <SpacingElement />
-                <StyledCodeSpecialCharacterBlock>{ '{' }</StyledCodeSpecialCharacterBlock>
-            </StyledCodeBlockLine>
-        </CodeConditionalBlock>
-        <StyledCodeBlockLine indent={3}>
-            <StyledCodeNeutralBlock>{ 'count' }</StyledCodeNeutralBlock>
-            <StyledCodeSpecialCharacterBlock>{ '++' }</StyledCodeSpecialCharacterBlock>
-            <CodeErrorPlaceholder showErrors={version === 'errors'}>
-                { 'Missing semi-colon' }
-            </CodeErrorPlaceholder>
-            <CodeConditionalBlock showBlock={version === 'fixed'} highlight>
-                <StyledCodeSpecialCharacterBlock>{ ';' }</StyledCodeSpecialCharacterBlock>
-            </CodeConditionalBlock>
-        </StyledCodeBlockLine>
-        <StyledCodeBlockLine indent={2}>
-            <StyledCodeSpecialCharacterBlock>{ '}' }</StyledCodeSpecialCharacterBlock>
-        </StyledCodeBlockLine>
-        <StyledCodeBlockLine indent={1}>
-            <StyledCodeSpecialCharacterBlock>{ '}' }</StyledCodeSpecialCharacterBlock>
-        </StyledCodeBlockLine>
-        <StyledCodeBlockLine indent={0}>
-            <StyledCodeSpecialCharacterBlock>{ '}' }</StyledCodeSpecialCharacterBlock>
-        </StyledCodeBlockLine>
-    </StyledCodeSection>
+  <StyledCodeSection>
+    <StyledCodeBlockLine indent={0}>
+      <StyledCodeDeclarationBlock>{"type"}</StyledCodeDeclarationBlock>
+      <SpacingElement />
+      <StyledCodeNormalBlock>{"Params"}</StyledCodeNormalBlock>
+      <SpacingElement />
+      <StyledCodeSpecialCharacterBlock>{"= {"}</StyledCodeSpecialCharacterBlock>
+      <SpacingElement />
+      <StyledCodeNeutralBlock>{"target"}</StyledCodeNeutralBlock>
+      <StyledCodeSpecialCharacterBlock>{":"}</StyledCodeSpecialCharacterBlock>
+      <SpacingElement />
+      <StyledCodeTypeBlock>{"string"}</StyledCodeTypeBlock>
+      <SpacingElement />
+      <StyledCodeSpecialCharacterBlock>{"}"}</StyledCodeSpecialCharacterBlock>
+      <CodeErrorPlaceholder showErrors={version === "errors"}>
+        {"Missing semi-colon"}
+      </CodeErrorPlaceholder>
+      <CodeConditionalBlock showBlock={version === "fixed"} highlight>
+        <StyledCodeSpecialCharacterBlock>{";"}</StyledCodeSpecialCharacterBlock>
+      </CodeConditionalBlock>
+    </StyledCodeBlockLine>
+    <CodeConditionalBlock showBlock={version === "fixed"} highlight>
+      <SpacingElement />
+    </CodeConditionalBlock>
+    <StyledCodeBlockLine indent={0}>
+      <StyledCodeDeclarationBlock>{"export "}</StyledCodeDeclarationBlock>
+      <SpacingElement />
+      <StyledCodeDeclarationBlock>{"function"}</StyledCodeDeclarationBlock>
+      <SpacingElement />
+      <StyledCodeDeclarationBlock>
+        {"count_occurences_of_i"}
+      </StyledCodeDeclarationBlock>
+      <SpacingElement />
+      <StyledCodeSpecialCharacterBlock>{"("}</StyledCodeSpecialCharacterBlock>
+      <SpacingElement />
+      <StyledCodeNeutralBlock>{"params"}</StyledCodeNeutralBlock>
+      <StyledCodeSpecialCharacterBlock>{":"}</StyledCodeSpecialCharacterBlock>
+      <SpacingElement />
+      <StyledCodeTypeBlock>{"Params"}</StyledCodeTypeBlock>
+      <StyledCodeSpecialCharacterBlock>{")"}</StyledCodeSpecialCharacterBlock>
+      <SpacingElement />
+      <StyledCodeSpecialCharacterBlock>{"{"}</StyledCodeSpecialCharacterBlock>
+      <CodeErrorPlaceholder showErrors={version === "errors"}>
+        {"Missing indentation between type and function declarations"}
+      </CodeErrorPlaceholder>
+    </StyledCodeBlockLine>
+    <StyledCodeBlockLine indent={1}>
+      <StyledCodeDeclarationBlock>{"var"}</StyledCodeDeclarationBlock>
+      <SpacingElement />
+      <StyledCodeNeutralBlock>{"count"}</StyledCodeNeutralBlock>
+      <SpacingElement />
+      <StyledCodeSpecialCharacterBlock>{"="}</StyledCodeSpecialCharacterBlock>
+      <SpacingElement />
+      <StyledCodeAssignmentBlock>{"0"}</StyledCodeAssignmentBlock>
+      <CodeErrorPlaceholder showErrors={version === "errors"}>
+        {"Missing semi-colon"}
+      </CodeErrorPlaceholder>
+      <CodeConditionalBlock showBlock={version === "fixed"} highlight>
+        <StyledCodeSpecialCharacterBlock>{";"}</StyledCodeSpecialCharacterBlock>
+      </CodeConditionalBlock>
+    </StyledCodeBlockLine>
+    <StyledCodeBlockLine indent={1}>
+      <StyledCodeDeclarationBlock>{"for"}</StyledCodeDeclarationBlock>
+      <SpacingElement />
+      <StyledCodeSpecialCharacterBlock>{"("}</StyledCodeSpecialCharacterBlock>
+      <StyledCodeDeclarationBlock>{"var"}</StyledCodeDeclarationBlock>
+      <SpacingElement />
+      <StyledCodeSpecialCharacterBlock>{"="}</StyledCodeSpecialCharacterBlock>
+      <SpacingElement />
+      <StyledCodeAssignmentBlock>{"0"}</StyledCodeAssignmentBlock>
+      <StyledCodeSpecialCharacterBlock>{";"}</StyledCodeSpecialCharacterBlock>
+      <SpacingElement />
+      <StyledCodeNeutralBlock>{"i"}</StyledCodeNeutralBlock>
+      <SpacingElement />
+      <StyledCodeSpecialCharacterBlock>{"<"}</StyledCodeSpecialCharacterBlock>
+      <SpacingElement />
+      <StyledCodeNeutralBlock>{"params"}</StyledCodeNeutralBlock>
+      <StyledCodeSpecialCharacterBlock>{"."}</StyledCodeSpecialCharacterBlock>
+      <StyledCodeNeutralBlock>{"target"}</StyledCodeNeutralBlock>
+      <StyledCodeSpecialCharacterBlock>{"."}</StyledCodeSpecialCharacterBlock>
+      <StyledCodeNeutralBlock>{"length"}</StyledCodeNeutralBlock>
+      <StyledCodeSpecialCharacterBlock>{";"}</StyledCodeSpecialCharacterBlock>
+      <SpacingElement />
+      <StyledCodeNeutralBlock>{"i"}</StyledCodeNeutralBlock>
+      <StyledCodeSpecialCharacterBlock>{"++"}</StyledCodeSpecialCharacterBlock>
+      <StyledCodeSpecialCharacterBlock>{")"}</StyledCodeSpecialCharacterBlock>
+      <SpacingElement />
+      <StyledCodeSpecialCharacterBlock>{"{"}</StyledCodeSpecialCharacterBlock>
+    </StyledCodeBlockLine>
+    <StyledCodeBlockLine indent={2}>
+      <StyledCodeDeclarationBlock>{"if"}</StyledCodeDeclarationBlock>
+      <SpacingElement />
+      <StyledCodeSpecialCharacterBlock>{"("}</StyledCodeSpecialCharacterBlock>
+      <StyledCodeNeutralBlock>{"params"}</StyledCodeNeutralBlock>
+      <StyledCodeSpecialCharacterBlock>{"."}</StyledCodeSpecialCharacterBlock>
+      <StyledCodeNeutralBlock>{"target"}</StyledCodeNeutralBlock>
+      <StyledCodeSpecialCharacterBlock>{"["}</StyledCodeSpecialCharacterBlock>
+      <StyledCodeNeutralBlock>{"i"}</StyledCodeNeutralBlock>
+      <StyledCodeSpecialCharacterBlock>{"]"}</StyledCodeSpecialCharacterBlock>
+      <SpacingElement />
+      <CodeConditionalBlock showBlock={version === "fixed"} highlight>
+        <StyledCodeSpecialCharacterBlock>{"!"}</StyledCodeSpecialCharacterBlock>
+      </CodeConditionalBlock>
+      <StyledCodeSpecialCharacterBlock>{"=="}</StyledCodeSpecialCharacterBlock>
+      <SpacingElement />
+      <StyledCodeLiteralValueBlock>{"'i'"}</StyledCodeLiteralValueBlock>
+      <StyledCodeSpecialCharacterBlock>{")"}</StyledCodeSpecialCharacterBlock>
+      <SpacingElement />
+      <StyledCodeSpecialCharacterBlock>{"{"}</StyledCodeSpecialCharacterBlock>
+      <CodeErrorPlaceholder showErrors={version === "errors"}>
+        {"Avoid empty if statements, prefer stricter equality (===)"}
+      </CodeErrorPlaceholder>
+    </StyledCodeBlockLine>
+    <CodeConditionalBlock showBlock={version !== "fixed"} highlight={false}>
+      <StyledCodeBlockLine indent={2}>
+        <StyledCodeSpecialCharacterBlock>{"}"}</StyledCodeSpecialCharacterBlock>
+        <SpacingElement />
+        <StyledCodeDeclarationBlock>{"else"}</StyledCodeDeclarationBlock>
+        <SpacingElement />
+        <StyledCodeSpecialCharacterBlock>{"{"}</StyledCodeSpecialCharacterBlock>
+      </StyledCodeBlockLine>
+    </CodeConditionalBlock>
+    <StyledCodeBlockLine indent={3}>
+      <StyledCodeNeutralBlock>{"count"}</StyledCodeNeutralBlock>
+      <StyledCodeSpecialCharacterBlock>{"++"}</StyledCodeSpecialCharacterBlock>
+      <CodeErrorPlaceholder showErrors={version === "errors"}>
+        {"Missing semi-colon"}
+      </CodeErrorPlaceholder>
+      <CodeConditionalBlock showBlock={version === "fixed"} highlight>
+        <StyledCodeSpecialCharacterBlock>{";"}</StyledCodeSpecialCharacterBlock>
+      </CodeConditionalBlock>
+    </StyledCodeBlockLine>
+    <StyledCodeBlockLine indent={2}>
+      <StyledCodeSpecialCharacterBlock>{"}"}</StyledCodeSpecialCharacterBlock>
+    </StyledCodeBlockLine>
+    <StyledCodeBlockLine indent={1}>
+      <StyledCodeSpecialCharacterBlock>{"}"}</StyledCodeSpecialCharacterBlock>
+    </StyledCodeBlockLine>
+    <StyledCodeBlockLine indent={0}>
+      <StyledCodeSpecialCharacterBlock>{"}"}</StyledCodeSpecialCharacterBlock>
+    </StyledCodeBlockLine>
+  </StyledCodeSection>
 );
 
 const StyledCodeSection = styled.div`

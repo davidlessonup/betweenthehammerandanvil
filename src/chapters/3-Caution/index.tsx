@@ -1,5 +1,3 @@
-import { CautionSlide } from './caution';
+import { CautionSlide } from "./caution";
 
-export const CautionChapter = () => (
-    <CautionSlide />
-);
+export const CautionChapter = () => <CautionSlide />;

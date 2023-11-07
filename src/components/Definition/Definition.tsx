@@ -1,9 +1,9 @@
-import React, { PropsWithChildren } from 'react';
-import styled from '@emotion/styled';
-import { colors } from '@Foundations/colors';
+import React, { PropsWithChildren } from "react";
+import styled from "@emotion/styled";
+import { colors } from "@Foundations/colors";
 
 export const Definition: React.FC<PropsWithChildren> = ({ children }) => (
-    <StyledDefinition>{ children }</StyledDefinition>
+  <StyledDefinition>{children}</StyledDefinition>
 );
 
 const StyledDefinition = styled.div`
