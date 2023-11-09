@@ -11,9 +11,8 @@ export const OutroSlide = () => (
       <Appear>
         <Quote author="Jean-Paul Sartre">
           {
-            "As far as men go, it is not what they are that interests me, but what"
+            "As far as men go, it is not what they are that interests me, but what they can become"
           }
-          {"they can become"}
         </Quote>
       </Appear>
       <Appear>

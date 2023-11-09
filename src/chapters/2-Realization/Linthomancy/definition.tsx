@@ -17,10 +17,7 @@ export const LinthomanyDefinitionSlide = () => (
       <Appear>
         <FlexBox alignItems="center" justifyContent="center">
           <Definition>
-            {
-              "Lithomancy is a form of divination by which the future is told using"
-            }
-            {"stones or the reflected light from the stones."}
+            {`Lithomancy is a form of divination by which the future is told using stones or the reflected light from the stones.`}
           </Definition>
         </FlexBox>
       </Appear>
@@ -32,9 +29,8 @@ export const LinthomanyDefinitionSlide = () => (
       <Appear>
         <FlexBox alignItems="center" justifyContent="center">
           <Definition>
-            {"LINThomancy is a form of development by which the review is"}
-            {"performed by only looking at the flow of the code and it's"}
-            {"organization."}
+            {`LINThomancy is a form of development by which the review is
+            performed by only looking at the flow of the code and it's organization.`}
           </Definition>
         </FlexBox>
       </Appear>

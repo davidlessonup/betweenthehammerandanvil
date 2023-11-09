@@ -10,7 +10,7 @@ export const LintConclusionSlide = () => (
       <Appear>
         <ListItem>
           {
-            "A democratilly voted standard will always be better than no standard"
+            "A democratically voted standard will always be better than no standard"
           }
         </ListItem>
       </Appear>

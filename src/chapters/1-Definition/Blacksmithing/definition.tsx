@@ -18,7 +18,7 @@ export const BlacksmithDefinitionSlide = () => (
       </Appear>
       <Appear>
         <Definition>
-          {`Unlike many other craftsmen, blacksmiths are able to make most of
+          {`...Unlike many other craftsmen, blacksmiths are able to make most of
                         their own tools.`}
         </Definition>
       </Appear>
