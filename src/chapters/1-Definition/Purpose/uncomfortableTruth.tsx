@@ -11,11 +11,8 @@ export const PurposeUncomfortableTruthSlide = () => (
       {"The proccess of development is a Zero-sum game"}
     </Heading>
     <Definition>
-      {"A Zero-sum game is a mathematical representation in game theory and"}
-      {
-        "economic theory of a situation that involves two sides, where the result"
-      }
-      {"is an advantage for one side and an equivalent loss for the other."}
+      {`A Zero-sum game is a mathematical representation in game theory and economic theory of a situation that involves two sides, 
+      where the result is an advantage for one side and an equivalent loss for the other.`}
     </Definition>
     <PurposeUncomfortableTruthNotes />
   </Slide>
