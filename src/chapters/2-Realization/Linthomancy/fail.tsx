@@ -1,48 +1,17 @@
-import {
-  Heading,
-  UnorderedList,
-  ListItem,
-  Appear,
-  Slide,
-  CodeSpan,
-} from "spectacle";
+import { Heading, Slide, Stepper } from "spectacle";
 import { LinuxCommandSpan } from "@Components/LinuxCommandSpan/LinuxCommandSpan";
 import styled from "@emotion/styled";
-import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
+import { AiOutlinePlus, AiOutlineMinus, AiOutlineInfo } from "react-icons/ai";
 import { colors } from "@Foundations/colors";
 
-const StyledTable = styled.div`
-  display: flex;
-  flex-direction: row;
-  font-size: 20px;
-
-  & code {
-    font-size: 20px;
-  }
-
-  & svg {
-    fill: ${colors.secondary};
-    width: 20px;
-    height: 20px;
-  }
-`;
-
-const StyledTableSection = styled.div`
-  width: 30%;
-  padding: 10px;
-`;
-const StyledTableHeading = styled.div`
-  color: ${colors.secondary};
-  font-size: 40px;
-  display: flex;
-  justify-content: center;
-`;
-
-const StyledTableColumn = styled.div`
-  display: inline-flex;
-  align-items: center;
-  padding-top: 10px;
-`;
+const TableEntryDescription: React.FC<React.PropsWithChildren> = ({
+  children,
+}) => (
+  <StyledTableColumn>
+    <AiOutlineInfo />
+    {children}
+  </StyledTableColumn>
+);
 
 const TableEntryPro: React.FC<React.PropsWithChildren> = ({ children }) => (
   <StyledTableColumn>
@@ -58,89 +27,177 @@ const TableEntryCon: React.FC<React.PropsWithChildren> = ({ children }) => (
   </StyledTableColumn>
 );
 
+interface TableHeadingProps {
+  highlight: boolean;
+  disabled: boolean;
+}
+
+const TableHeading: React.FC<React.PropsWithChildren<TableHeadingProps>> = ({
+  highlight,
+  disabled,
+  children,
+}) => (
+  <StyledTableHeading highlight={highlight} disabled={disabled}>
+    <span>{children}</span>
+  </StyledTableHeading>
+);
+
+const stepperValues = [
+  "localBuild",
+  "plugin",
+  "githook",
+  "pipelineBuild",
+  "preference",
+] as const;
+
+type TableSteps = (typeof stepperValues)[number];
+
+const tableEntries = [
+  "localBuild",
+  "plugin",
+  "githook",
+  "pipelineBuild",
+] as const;
+
+type TableEntries = (typeof tableEntries)[number];
+
+interface TableColumn {
+  title: string;
+  description: string;
+  pros: string[];
+  cons: string[];
+  highlight: boolean;
+}
+
+const localBuildTableColumn: TableColumn = {
+  title: "1 - Local Build",
+  description: "Perform linting on the local build",
+  pros: ["Breaks the build and makes fixing it a priority"],
+  cons: ["Can impact development"],
+  highlight: false,
+};
+
+const pluginTableColumn: TableColumn = {
+  title: "2 - IDE/LSP Plugin",
+  description: "Have developers use an IDE/LSP based plugin",
+  pros: ["Gives the developer real time insight of issues"],
+  cons: ["The developer might not use it"],
+  highlight: true,
+};
+
+const githookTableColumn: TableColumn = {
+  title: "3 - Git Hook",
+  description: "Create a hook to run all linting",
+  pros: ["Gives the developer a timely insight that there are issues"],
+  cons: ["Can be bypassed with a flag"],
+  highlight: true,
+};
+
+const pipelineBuildTableColumn: TableColumn = {
+  title: "4 - Pipeline Build",
+  description: "Perform Linting on a build pipeline",
+  pros: ["Breaks the build and makes fixing it a priority"],
+  cons: ["Might slow down builds with trivial issues"],
+  highlight: true,
+};
+
+const table: Record<TableEntries, TableColumn> = {
+  localBuild: localBuildTableColumn,
+  plugin: pluginTableColumn,
+  githook: githookTableColumn,
+  pipelineBuild: pipelineBuildTableColumn,
+};
+
+const stepsMapper: Record<TableSteps, TableEntries[]> = {
+  localBuild: ["localBuild"],
+  plugin: ["localBuild", "plugin"],
+  githook: ["localBuild", "plugin", "githook"],
+  pipelineBuild: ["localBuild", "plugin", "githook", "pipelineBuild"],
+  preference: ["localBuild", "plugin", "githook", "pipelineBuild"],
+};
+
+const TableSection: React.FC<{
+  data: TableColumn;
+  showHighlight: boolean;
+}> = ({ data, showHighlight }) => (
+  <StyledTableSection disabled={showHighlight && !data.highlight}>
+    <TableHeading
+      highlight={showHighlight && data.highlight}
+      disabled={showHighlight && !data.highlight}
+    >
+      {data.title}
+    </TableHeading>
+    <TableEntryDescription>{data.description}</TableEntryDescription>
+    {data.pros.map((pro) => (
+      <TableEntryPro>{pro}</TableEntryPro>
+    ))}
+    {data.cons.map((con) => (
+      <TableEntryCon>{con}</TableEntryCon>
+    ))}
+  </StyledTableSection>
+);
+
+const getTableElements = (steps: TableEntries[], v: TableSteps) =>
+  steps &&
+  steps.map((step) => (
+    <TableSection data={table[step]} showHighlight={v === "preference"} />
+  ));
+
 export const LinthomancyFailSlide = () => (
   <Slide>
     <Heading>
       <LinuxCommandSpan>{"git push --force"}</LinuxCommandSpan>
     </Heading>
-    <UnorderedList>
-      <StyledTable>
-        <StyledTableSection>
-          <StyledTableHeading>{"IDE/LSP plugin"}</StyledTableHeading>
-          <StyledTableColumn>
-            {"Have developers use an IDE/LSP based plugin"}
-          </StyledTableColumn>
-          <TableEntryPro>
-            {"Gives the developer real time insight of issues"}
-          </TableEntryPro>
-          <TableEntryCon>{"The developer might not use it"}</TableEntryCon>
-        </StyledTableSection>
-        <StyledTableSection>
-          <StyledTableHeading>{"git hook"}</StyledTableHeading>
-          <StyledTableColumn>
-            {"Create a hook to run all linting"}
-          </StyledTableColumn>
-          <TableEntryPro>
-            {"Gives the developer a timely insight that there are issues"}
-          </TableEntryPro>
-          <TableEntryCon>
-            {"Can be bypassed with a flag"}
-            <CodeSpan />
-          </TableEntryCon>
-        </StyledTableSection>
-        <StyledTableSection>
-          <StyledTableHeading>{"pipeline"}</StyledTableHeading>
-          <StyledTableColumn>
-            {"Perform Linting on a build pipeline"}
-          </StyledTableColumn>
-          <TableEntryPro>
-            {"Breaks the build and makes fixing it a priority"}
-          </TableEntryPro>
-          <TableEntryCon>
-            {"Might slow down builds with trivial issues"}
-          </TableEntryCon>
-        </StyledTableSection>
-      </StyledTable>
-    </UnorderedList>
+    <Stepper
+      tagName="div"
+      alwaysVisible
+      values={stepperValues as unknown as TableSteps[]}
+    >
+      {(value) => (
+        <StyledTable>
+          {getTableElements(
+            stepsMapper[value as TableSteps],
+            value as TableSteps,
+          )}
+        </StyledTable>
+      )}
+    </Stepper>
   </Slide>
 );
 
-export const LinthomancyFailSlide2 = () => (
-  <Slide>
-    <Heading>
-      <LinuxCommandSpan>{"git push --force"}</LinuxCommandSpan>
-    </Heading>
-    <UnorderedList>
-      <Appear>
-        <ListItem>
-          {"Have developers use an IDE plugin"}{" "}
-          <Appear>
-            {"Pro: Gives the developer real time insight of issues"}
-          </Appear>{" "}
-          <Appear>{"Con: The developer might not use it"}</Appear>
-        </ListItem>
-      </Appear>
-      <Appear>
-        <ListItem>
-          {"Create a pre-commit hook to run all linting"}{" "}
-          <Appear>
-            {"Pro: Gives the developer a timely insight that there are issues"}
-          </Appear>{" "}
-          <Appear>
-            {"Con: Can be bypassed with"}{" "}
-            <CodeSpan>{"git commit --no-verify"}</CodeSpan>
-          </Appear>
-        </ListItem>
-      </Appear>
-      <Appear>
-        <ListItem>
-          {"Perform Linting on a build pipeline"}{" "}
-          <Appear>
-            {"Pro: Breaks the build and makes fixing it a priority"}
-          </Appear>{" "}
-          <Appear>{"Con: Might slow down builds with non-issues"}</Appear>
-        </ListItem>
-      </Appear>
-    </UnorderedList>
-  </Slide>
-);
+const StyledTable = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 20px;
+`;
+
+const StyledTableSection = styled.div<{ disabled: boolean }>`
+  width: 50%;
+  box-sizing: border-box;
+  padding: 20px;
+  ${(props) => props.disabled && `color: ${colors.disabled};`}
+
+  & svg {
+    fill: ${(props) => (props.disabled ? colors.disabled : colors.secondary)};
+    width: 20px;
+    height: 20px;
+  }
+`;
+
+const StyledTableHeading = styled.div<TableHeadingProps>`
+  color: ${(props) => (props.disabled ? colors.disabled : colors.secondary)};
+  font-size: 30px;
+
+  & > span {
+    ${(props) => props.highlight && `border: 2px solid ${colors.primary};`}
+  }
+`;
+
+const StyledTableColumn = styled.div`
+  display: inline-flex;
+  align-items: center;
+  padding-top: 10px;
+  font-size: 16px;
+  gap: 10px;
+  width: 100%;
+`;

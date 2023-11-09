@@ -8,7 +8,7 @@ export const PersonalIntroductionSlide = () => (
     </Heading>
     <Grid
       gridTemplateColumns="50% 50%"
-      gridTemplateRows="33% 33%"
+      gridTemplateRows="50% 50%"
       height="100%"
     >
       <Appear>
@@ -18,12 +18,7 @@ export const PersonalIntroductionSlide = () => (
       </Appear>
       <Appear priority={4}>
         <FlexBox alignItems="center" justifyContent="center">
-          <Text>{"(Almost) 33!"}</Text>
-        </FlexBox>
-      </Appear>
-      <Appear priority={5}>
-        <FlexBox alignItems="center" justifyContent="center">
-          <Text>{"????"}</Text>
+          <Text>{"Cinephile"}</Text>
         </FlexBox>
       </Appear>
       <Appear priority={3}>
@@ -34,11 +29,6 @@ export const PersonalIntroductionSlide = () => (
       <Appear priority={1}>
         <FlexBox alignItems="center" justifyContent="center">
           <Text>{"Metalhead"}</Text>
-        </FlexBox>
-      </Appear>
-      <Appear priority={6}>
-        <FlexBox alignItems="center" justifyContent="center">
-          <Text>{"Movie Buff"}</Text>
         </FlexBox>
       </Appear>
     </Grid>

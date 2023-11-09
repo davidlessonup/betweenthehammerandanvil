@@ -29,11 +29,9 @@ const stepperValues = [
   "r",
   "d",
   "e",
-  "singleComparison",
   "rd",
-  "re",
   "de",
-  "doubleComparison",
+  "re",
   "rde",
 ] as const;
 
@@ -77,12 +75,6 @@ const singleEFocus: RadarChartData = {
   meta: { color: chartColors.tertiary },
 };
 
-const singleComparison: RadarChartData[] = [
-  singleRFocus,
-  singleDFocus,
-  singleEFocus,
-];
-
 const doubleRDFocus: RadarChartData = {
   data: {
     reliability: 0.7,
@@ -90,15 +82,6 @@ const doubleRDFocus: RadarChartData = {
     expandability: 0.1,
   },
   meta: { color: chartColors.primary },
-};
-
-const doubleREFocus: RadarChartData = {
-  data: {
-    reliability: 0.7,
-    delivery: 0.1,
-    expandability: 0.7,
-  },
-  meta: { color: chartColors.secondary },
 };
 
 const doubleDEFocus: RadarChartData = {
@@ -110,11 +93,14 @@ const doubleDEFocus: RadarChartData = {
   meta: { color: chartColors.tertiary },
 };
 
-const doubleComparison: RadarChartData[] = [
-  doubleRDFocus,
-  doubleDEFocus,
-  doubleREFocus,
-];
+const doubleREFocus: RadarChartData = {
+  data: {
+    reliability: 0.7,
+    delivery: 0.1,
+    expandability: 0.7,
+  },
+  meta: { color: chartColors.secondary },
+};
 
 const tripleComparison: RadarChartData[] = [
   {
@@ -145,43 +131,33 @@ const stateMapper: Record<DiagramSteps, StateMapperEntry> = {
     triple: [],
   },
   d: {
-    single: [singleDFocus],
+    single: [singleRFocus, singleDFocus],
     double: [],
     triple: [],
   },
   e: {
-    single: [singleEFocus],
-    double: [],
-    triple: [],
-  },
-  singleComparison: {
-    single: singleComparison,
+    single: [singleRFocus, singleDFocus, singleEFocus],
     double: [],
     triple: [],
   },
   rd: {
-    single: singleComparison,
+    single: [singleRFocus, singleDFocus, singleEFocus],
     double: [doubleRDFocus],
     triple: [],
   },
-  re: {
-    single: singleComparison,
-    double: [doubleREFocus],
-    triple: [],
-  },
   de: {
-    single: singleComparison,
-    double: [doubleDEFocus],
+    single: [singleRFocus, singleDFocus, singleEFocus],
+    double: [doubleRDFocus, doubleDEFocus],
     triple: [],
   },
-  doubleComparison: {
-    single: singleComparison,
-    double: doubleComparison,
+  re: {
+    single: [singleRFocus, singleDFocus, singleEFocus],
+    double: [doubleRDFocus, doubleDEFocus, doubleREFocus],
     triple: [],
   },
   rde: {
-    single: singleComparison,
-    double: doubleComparison,
+    single: [singleRFocus, singleDFocus, singleEFocus],
+    double: [doubleRDFocus, doubleDEFocus, doubleREFocus],
     triple: tripleComparison,
   },
 };

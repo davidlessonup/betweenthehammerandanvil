@@ -53,14 +53,25 @@ export const CodeExample: React.FC<CodeExampleProps> = ({ version }) => (
       <SpacingElement />
       <StyledCodeSpecialCharacterBlock>{"= {"}</StyledCodeSpecialCharacterBlock>
       <SpacingElement />
-      <StyledCodeNeutralBlock>{"target"}</StyledCodeNeutralBlock>
+      <StyledCodeNeutralBlock>{"needle"}</StyledCodeNeutralBlock>
       <StyledCodeSpecialCharacterBlock>{":"}</StyledCodeSpecialCharacterBlock>
       <SpacingElement />
       <StyledCodeTypeBlock>{"string"}</StyledCodeTypeBlock>
+      <StyledCodeSpecialCharacterBlock>{";"}</StyledCodeSpecialCharacterBlock>
+      <SpacingElement />
+      <StyledCodeNeutralBlock>{"haystack"}</StyledCodeNeutralBlock>
+      <StyledCodeSpecialCharacterBlock>{":"}</StyledCodeSpecialCharacterBlock>
+      <SpacingElement />
+      <CodeConditionalBlock showBlock={version !== "fixed"} highlight={false}>
+        <StyledCodeTypeBlock>{"string[]"}</StyledCodeTypeBlock>
+      </CodeConditionalBlock>
+      <CodeConditionalBlock showBlock={version === "fixed"} highlight>
+        <StyledCodeTypeBlock>{"Array<string>"}</StyledCodeTypeBlock>
+      </CodeConditionalBlock>
       <SpacingElement />
       <StyledCodeSpecialCharacterBlock>{"}"}</StyledCodeSpecialCharacterBlock>
       <CodeErrorPlaceholder showErrors={version === "errors"}>
-        {"Missing semi-colon"}
+        {"Missing semi-colon, prefer Array<T> type"}
       </CodeErrorPlaceholder>
       <CodeConditionalBlock showBlock={version === "fixed"} highlight>
         <StyledCodeSpecialCharacterBlock>{";"}</StyledCodeSpecialCharacterBlock>
@@ -70,12 +81,10 @@ export const CodeExample: React.FC<CodeExampleProps> = ({ version }) => (
       <SpacingElement />
     </CodeConditionalBlock>
     <StyledCodeBlockLine indent={0}>
-      <StyledCodeDeclarationBlock>{"export "}</StyledCodeDeclarationBlock>
-      <SpacingElement />
       <StyledCodeDeclarationBlock>{"function"}</StyledCodeDeclarationBlock>
       <SpacingElement />
       <StyledCodeDeclarationBlock>
-        {"count_occurences_of_i"}
+        {"countOccurencesOf"}
       </StyledCodeDeclarationBlock>
       <SpacingElement />
       <StyledCodeSpecialCharacterBlock>{"("}</StyledCodeSpecialCharacterBlock>
@@ -123,7 +132,7 @@ export const CodeExample: React.FC<CodeExampleProps> = ({ version }) => (
       <SpacingElement />
       <StyledCodeNeutralBlock>{"params"}</StyledCodeNeutralBlock>
       <StyledCodeSpecialCharacterBlock>{"."}</StyledCodeSpecialCharacterBlock>
-      <StyledCodeNeutralBlock>{"target"}</StyledCodeNeutralBlock>
+      <StyledCodeNeutralBlock>{"haystack"}</StyledCodeNeutralBlock>
       <StyledCodeSpecialCharacterBlock>{"."}</StyledCodeSpecialCharacterBlock>
       <StyledCodeNeutralBlock>{"length"}</StyledCodeNeutralBlock>
       <StyledCodeSpecialCharacterBlock>{";"}</StyledCodeSpecialCharacterBlock>
@@ -140,7 +149,7 @@ export const CodeExample: React.FC<CodeExampleProps> = ({ version }) => (
       <StyledCodeSpecialCharacterBlock>{"("}</StyledCodeSpecialCharacterBlock>
       <StyledCodeNeutralBlock>{"params"}</StyledCodeNeutralBlock>
       <StyledCodeSpecialCharacterBlock>{"."}</StyledCodeSpecialCharacterBlock>
-      <StyledCodeNeutralBlock>{"target"}</StyledCodeNeutralBlock>
+      <StyledCodeNeutralBlock>{"haystack"}</StyledCodeNeutralBlock>
       <StyledCodeSpecialCharacterBlock>{"["}</StyledCodeSpecialCharacterBlock>
       <StyledCodeNeutralBlock>{"i"}</StyledCodeNeutralBlock>
       <StyledCodeSpecialCharacterBlock>{"]"}</StyledCodeSpecialCharacterBlock>
@@ -150,7 +159,9 @@ export const CodeExample: React.FC<CodeExampleProps> = ({ version }) => (
       </CodeConditionalBlock>
       <StyledCodeSpecialCharacterBlock>{"=="}</StyledCodeSpecialCharacterBlock>
       <SpacingElement />
-      <StyledCodeLiteralValueBlock>{"'i'"}</StyledCodeLiteralValueBlock>
+      <StyledCodeNeutralBlock>{"params"}</StyledCodeNeutralBlock>
+      <StyledCodeSpecialCharacterBlock>{"."}</StyledCodeSpecialCharacterBlock>
+      <StyledCodeNeutralBlock>{"needle"}</StyledCodeNeutralBlock>
       <StyledCodeSpecialCharacterBlock>{")"}</StyledCodeSpecialCharacterBlock>
       <SpacingElement />
       <StyledCodeSpecialCharacterBlock>{"{"}</StyledCodeSpecialCharacterBlock>
@@ -228,10 +239,6 @@ const StyledCodeAssignmentBlock = styled.span`
 
 const StyledCodeSpecialCharacterBlock = styled.span`
   color: ${codeBlockColors.specialCharacter};
-`;
-
-const StyledCodeLiteralValueBlock = styled.span`
-  color: ${codeBlockColors.literalValue};
 `;
 
 const StyledCodeErrorPlaceholder = styled.span`

@@ -33,71 +33,73 @@ export const PurposeAreaOfEffectSlide = () => (
     <Heading>
       <LinuxCommandSpan>{"cat area.txt"}</LinuxCommandSpan>
     </Heading>
-    <Stepper tagName="div" values={stepperValues as unknown as string[]}>
-      {(value) => {
-        const defaultValue = value === "diagram" ? "neutral" : "inactive";
+    <StyledWrapper>
+      <Stepper tagName="div" values={stepperValues as unknown as string[]}>
+        {(value) => {
+          const defaultValue = value === "diagram" ? "neutral" : "inactive";
 
-        return (
-          <StyledDiagramWrapper>
-            <StyledDiagramIconWrapper>
-              <ImInfinite />
-              <AiOutlineArrowRight />
-            </StyledDiagramIconWrapper>
-            <StyledDiagramRectangle type={defaultValue}>
-              {"Discovery"}
-            </StyledDiagramRectangle>
-            <StyledDiagramIconWrapper>
-              <AiOutlineArrowRight />
-            </StyledDiagramIconWrapper>
-            <StyledDiagramRectangle type={defaultValue}>
-              {"Design"}
-            </StyledDiagramRectangle>
-            <StyledDiagramIconWrapper>
-              <AiOutlineArrowRight />
-            </StyledDiagramIconWrapper>
-            <StyledDiagramRectangle
-              type={shouldHighlight(
-                value,
-                ["development", "testing", "maintenance"],
-                defaultValue,
-              )}
-            >
-              {"Development"}
-            </StyledDiagramRectangle>
-            <StyledDiagramIconWrapper>
-              <AiOutlineArrowRight />
-            </StyledDiagramIconWrapper>
-            <StyledDiagramRectangle
-              type={shouldHighlight(
-                value,
-                ["testing", "maintenance"],
-                defaultValue,
-              )}
-            >
-              {"Testing / QA"}
-            </StyledDiagramRectangle>
-            <StyledDiagramIconWrapper>
-              <AiOutlineArrowRight />
-            </StyledDiagramIconWrapper>
-            <StyledDiagramRectangle type={defaultValue}>
-              {"Release"}
-            </StyledDiagramRectangle>
-            <StyledDiagramIconWrapper>
-              <AiOutlineArrowRight />
-            </StyledDiagramIconWrapper>
-            <StyledDiagramRectangle
-              type={shouldHighlight(value, ["maintenance"], defaultValue)}
-            >
-              {"Maintenace"}
-            </StyledDiagramRectangle>
-            <StyledDiagramIconWrapper>
-              <AiOutlineArrowRight />
-              <ImInfinite />
-            </StyledDiagramIconWrapper>
-          </StyledDiagramWrapper>
-        );
-      }}
-    </Stepper>
+          return (
+            <StyledDiagramWrapper>
+              <StyledDiagramIconWrapper>
+                <ImInfinite />
+                <AiOutlineArrowRight />
+              </StyledDiagramIconWrapper>
+              <StyledDiagramRectangle type={defaultValue}>
+                {"Discovery"}
+              </StyledDiagramRectangle>
+              <StyledDiagramIconWrapper>
+                <AiOutlineArrowRight />
+              </StyledDiagramIconWrapper>
+              <StyledDiagramRectangle type={defaultValue}>
+                {"Design"}
+              </StyledDiagramRectangle>
+              <StyledDiagramIconWrapper>
+                <AiOutlineArrowRight />
+              </StyledDiagramIconWrapper>
+              <StyledDiagramRectangle
+                type={shouldHighlight(
+                  value,
+                  ["development", "testing", "maintenance"],
+                  defaultValue,
+                )}
+              >
+                {"Development"}
+              </StyledDiagramRectangle>
+              <StyledDiagramIconWrapper>
+                <AiOutlineArrowRight />
+              </StyledDiagramIconWrapper>
+              <StyledDiagramRectangle
+                type={shouldHighlight(
+                  value,
+                  ["testing", "maintenance"],
+                  defaultValue,
+                )}
+              >
+                {"Testing / QA"}
+              </StyledDiagramRectangle>
+              <StyledDiagramIconWrapper>
+                <AiOutlineArrowRight />
+              </StyledDiagramIconWrapper>
+              <StyledDiagramRectangle type={defaultValue}>
+                {"Release"}
+              </StyledDiagramRectangle>
+              <StyledDiagramIconWrapper>
+                <AiOutlineArrowRight />
+              </StyledDiagramIconWrapper>
+              <StyledDiagramRectangle
+                type={shouldHighlight(value, ["maintenance"], defaultValue)}
+              >
+                {"Maintenace"}
+              </StyledDiagramRectangle>
+              <StyledDiagramIconWrapper>
+                <AiOutlineArrowRight />
+                <ImInfinite />
+              </StyledDiagramIconWrapper>
+            </StyledDiagramWrapper>
+          );
+        }}
+      </Stepper>
+    </StyledWrapper>
     <PurposeAreaOfEffectNotes />
   </Slide>
 );
@@ -153,4 +155,11 @@ const StyledDiagramRectangle = styled.div<StyledDiagramRectangleProps>`
   color: ${colors.quaternary};
   padding: 10px;
   opacity: ${getOpacity};
+`;
+
+const StyledWrapper = styled.div`
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;

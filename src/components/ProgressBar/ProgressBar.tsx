@@ -15,11 +15,6 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({ current, total }) => {
   return (
     <ProgressBarPlaceholder>
       <ProgressBarWrapper current={actualCurrent}>
-        <ProgressText total={actualTotal}>
-          {actualCurrent}
-          {"/"}
-          {actualTotal}
-        </ProgressText>
         <ProgressWrapper>
           {[...new Array(actualTotal)].map((_, idx) => {
             const isCurrent = idx + 1 === actualCurrent;
@@ -66,13 +61,6 @@ const ProgressBarWrapper = styled.div<{ current: number }>`
   visibility: ${(props) => (props.current === 0 ? "hidden" : "visible")};
   color: ${colors.primary};
   animation: fadeInFromNone 2s ease-out;
-`;
-
-const ProgressText = styled.span<{ total: number }>`
-  display: flex;
-  min-width: ${(props) => props.total.toString().length * 2 + 2}ch;
-  justify-content: end;
-  margin-right: 5px;
 `;
 
 const ProgressWrapper = styled.div`

@@ -1,14 +1,16 @@
 import { LintLandingSlide } from "./landing";
-import { LinthomanyDefinitionSlide } from "./definition";
 import { LinthomancyFailSlide } from "./fail";
 import { LintStrengthCodeExampleSlide } from "./example";
+import { LinthomanyDefinitionSlide } from "./definition";
+import { LinthomancyReviewFocusSlide } from "./reviewFocus";
 import { LintConclusionSlide } from "./conclusion";
 
 export const LinthomancySubChapter = () => (
   <>
     <LintLandingSlide />
-    <LinthomanyDefinitionSlide />
     <LintStrengthCodeExampleSlide />
+    <LinthomancyReviewFocusSlide />
+    <LinthomanyDefinitionSlide />
     <LinthomancyFailSlide />
     <LintConclusionSlide />
   </>
