@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { codeBlockColors } from "@Foundations/colors";
+import { fonts, codeFonts } from "@Foundations/typography";
 
 const SpacingElement = () => <>&nbsp;</>;
 
@@ -201,6 +202,7 @@ export const CodeExample: React.FC<CodeExampleProps> = ({ version }) => (
 );
 
 const StyledCodeSection = styled.div`
+  font-family: ${codeFonts};
   background-color: ${codeBlockColors.background};
   color: ${codeBlockColors.declaration};
   padding: 10px 20px;
@@ -242,6 +244,7 @@ const StyledCodeSpecialCharacterBlock = styled.span`
 `;
 
 const StyledCodeErrorPlaceholder = styled.span`
+  font-family: ${fonts};
   background-color: ${codeBlockColors.error};
   color: ${codeBlockColors.background};
   padding-left: 1ch;
