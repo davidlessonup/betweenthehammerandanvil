@@ -108,6 +108,10 @@ const shouldHighlight = function shouldHighlight(
 
 const PurposeAreaOfEffectNotes = () => (
   <Notes>
+    {
+      "If we consider software development as a flow described by the following graph"
+    }
+    <p />
     {"This talk will focus on the following aspects:"}
     <NotesTable
       slideName="defintion-aoe"

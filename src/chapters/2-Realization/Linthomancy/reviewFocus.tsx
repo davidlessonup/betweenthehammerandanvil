@@ -41,7 +41,7 @@ const LinthomancyReviewFocusNotes = () => (
       slideName="review-focus-linthomancy"
       notes={[
         "Catch unwanted effects",
-        "Sanity check approaches",
+        "Sanity check the approaches",
         "Keep development in a straight path",
         "And to help enforce agreed upon standards",
       ]}
@@ -54,7 +54,7 @@ const LinthomancyReviewFocusNotes = () => (
       notes={["Readability", "Standards", "Flow", "Performance"]}
     />
     {
-      "But what if there was something we could do to maximize one or more dimensions without afecting the others?"
+      "Is there something we can do to maximize one or more dimensions without afecting the others?"
     }
   </Notes>
 );

@@ -40,9 +40,14 @@ const LintStrengthCodeExampleNotes = () => (
         "There are 7 change requests in this 10 LoC snippet",
         "Multiply that by more files, and reviewers",
         "Also add in the amount of time needed to apply those changes",
-        "Then there's the issue that if we factor in human error from all parties, things like these might slide",
+        "Factor in human error from all parties, things like these might slide",
       ]}
     />
+    <p />
+    {
+      "The problem this creates is not necessarily a waste of time, but a waste of focus"
+    }
+    <p />
     {
       "Therefore it is a better approach to just delegate these things to linters, who can clean it up automatically"
     }

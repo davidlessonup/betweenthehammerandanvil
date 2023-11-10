@@ -39,7 +39,7 @@ export const LinthomanyDefinitionSlide = () => (
 
 const LinthomancyDefinitionNotes = () => (
   <Notes>
-    {"Has anyone here know the concept of lithomacy?"}
+    {"Has anyone here ever heard of lithomacy?"}
     <p />
     {"What about LINThomacy?"}
   </Notes>
