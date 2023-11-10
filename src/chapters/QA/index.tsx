@@ -1,5 +1,5 @@
 import { SlideLayout, Heading } from "spectacle";
-import { SubHeading } from "@Components/SubHeading";
+import { SubHeading } from "@Components/SubHeading/SubHeading";
 
 export const QAChapter = () => (
   <SlideLayout.Center>

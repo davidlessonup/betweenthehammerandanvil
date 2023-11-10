@@ -1,5 +1,5 @@
 import { Appear, Slide, Grid, FlexBox } from "spectacle";
-import { CommandHeading } from "@Components/CommandHeading";
+import { CommandHeading } from "@Components/CommandHeading/CommandHeading";
 import { Definition } from "@Components/Definition/Definition";
 import { colors } from "@Foundations/colors";
 import { AiOutlineArrowDown } from "react-icons/ai";

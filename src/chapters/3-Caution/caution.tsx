@@ -1,5 +1,5 @@
 import { Slide, Notes, UnorderedList, ListItem, Appear } from "spectacle";
-import { CommandHeading } from "@Components/CommandHeading";
+import { CommandHeading } from "@Components/CommandHeading/CommandHeading";
 
 export const CautionSlide = () => (
   <Slide>

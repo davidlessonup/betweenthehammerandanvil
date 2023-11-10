@@ -1,7 +1,7 @@
 import { Heading, Slide, Grid, FlexBox, Notes } from "spectacle";
 import { colors } from "@Foundations/colors";
 import { GiAnvilImpact } from "react-icons/gi";
-import { NotesTable } from "@Components/NotesTable";
+import { NotesTable } from "@Components/NotesTable/NotesTable";
 
 export const HeroSlide = () => (
   <Slide>

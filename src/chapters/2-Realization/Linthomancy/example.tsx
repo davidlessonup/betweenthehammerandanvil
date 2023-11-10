@@ -1,5 +1,5 @@
 import { Slide, Stepper } from "spectacle";
-import { CommandHeading } from "@Components/CommandHeading";
+import { CommandHeading } from "@Components/CommandHeading/CommandHeading";
 import { CodeExample, CodeExampleVersion } from "./components/CodeExample";
 
 const determineWhichVersionToShow = function determineWhichVersionToShow(

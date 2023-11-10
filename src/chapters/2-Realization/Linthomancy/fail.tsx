@@ -1,5 +1,5 @@
 import { Slide, Stepper } from "spectacle";
-import { CommandHeading } from "@Components/CommandHeading";
+import { CommandHeading } from "@Components/CommandHeading/CommandHeading";
 import styled from "@emotion/styled";
 import { AiOutlinePlus, AiOutlineMinus, AiOutlineInfo } from "react-icons/ai";
 import { colors } from "@Foundations/colors";

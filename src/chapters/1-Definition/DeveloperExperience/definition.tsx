@@ -1,8 +1,8 @@
 import { Slide, Appear } from "spectacle";
-import { CommandHeading } from "@Components/CommandHeading";
+import { CommandHeading } from "@Components/CommandHeading/CommandHeading";
 import { Definition } from "@Components/Definition/Definition";
 import styled from "@emotion/styled";
-import { SubHeading } from "@Components/SubHeading";
+import { SubHeading } from "@Components/SubHeading/SubHeading";
 
 export const DeveloperExperienceDefinitionSlide = () => (
   <Slide>

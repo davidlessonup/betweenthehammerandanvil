@@ -1,11 +1,11 @@
 import { Slide, Notes, Stepper } from "spectacle";
-import { CommandHeading } from "@Components/CommandHeading";
+import { CommandHeading } from "@Components/CommandHeading/CommandHeading";
 import styled from "@emotion/styled";
 import RadarChart from "react-svg-radar-chart";
 import "react-svg-radar-chart/build/css/index.css";
 import { fonts } from "@Foundations/typography";
 import { colors, chartColors } from "@Foundations/colors";
-import { NotesTable } from "@Components/NotesTable";
+import { NotesTable } from "@Components/NotesTable/NotesTable";
 
 interface RadarChartData {
   data: {

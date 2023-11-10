@@ -1,6 +1,6 @@
 import { Slide, Notes } from "spectacle";
-import { CommandHeading } from "@Components/CommandHeading";
-import { SubHeading } from "@Components/SubHeading";
+import { CommandHeading } from "@Components/CommandHeading/CommandHeading";
+import { SubHeading } from "@Components/SubHeading/SubHeading";
 import { Definition } from "@Components/Definition/Definition";
 
 export const PurposeUncomfortableTruthSlide = () => (

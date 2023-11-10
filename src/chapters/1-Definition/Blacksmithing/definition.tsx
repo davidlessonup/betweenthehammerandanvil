@@ -1,9 +1,9 @@
 import { Slide, Appear, Notes } from "spectacle";
-import { CommandHeading } from "@Components/CommandHeading";
+import { CommandHeading } from "@Components/CommandHeading/CommandHeading";
 import { Definition } from "@Components/Definition/Definition";
 import styled from "@emotion/styled";
-import { NotesTable } from "@Components/NotesTable";
-import { SubHeading } from "@Components/SubHeading";
+import { NotesTable } from "@Components/NotesTable/NotesTable";
+import { SubHeading } from "@Components/SubHeading/SubHeading";
 
 export const BlacksmithDefinitionSlide = () => (
   <Slide>

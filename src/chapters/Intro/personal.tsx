@@ -1,6 +1,6 @@
 import { Text, Appear, Slide, Grid, FlexBox, Notes } from "spectacle";
-import { CommandHeading } from "@Components/CommandHeading";
-import { NotesTable } from "@Components/NotesTable";
+import { CommandHeading } from "@Components/CommandHeading/CommandHeading";
+import { NotesTable } from "@Components/NotesTable/NotesTable";
 
 export const PersonalIntroductionSlide = () => (
   <Slide>

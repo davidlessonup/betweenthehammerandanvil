@@ -1,10 +1,10 @@
 import { Slide, Notes, Stepper } from "spectacle";
-import { CommandHeading } from "@Components/CommandHeading";
+import { CommandHeading } from "@Components/CommandHeading/CommandHeading";
 import styled from "@emotion/styled";
 import { colors } from "@Foundations/colors";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { ImInfinite } from "react-icons/im";
-import { NotesTable } from "@Components/NotesTable";
+import { NotesTable } from "@Components/NotesTable/NotesTable";
 
 type StyledDiagramRectangleType = "neutral" | "highlighted" | "inactive";
 

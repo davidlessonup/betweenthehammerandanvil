@@ -1,5 +1,5 @@
 import { Slide, Notes, UnorderedList, ListItem, Stepper } from "spectacle";
-import { CommandHeading } from "@Components/CommandHeading";
+import { CommandHeading } from "@Components/CommandHeading/CommandHeading";
 import { Quote } from "@Components/Quote/Quote";
 import styled from "@emotion/styled";
 import RadarChart from "react-svg-radar-chart";

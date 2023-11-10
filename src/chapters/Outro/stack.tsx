@@ -1,5 +1,5 @@
 import { Slide, SpectacleLogo } from "spectacle";
-import { CommandHeading } from "@Components/CommandHeading";
+import { CommandHeading } from "@Components/CommandHeading/CommandHeading";
 import styled from "@emotion/styled";
 import { colors } from "@Foundations/colors";
 import { BiLogoTypescript, BiLogoReact } from "react-icons/bi";

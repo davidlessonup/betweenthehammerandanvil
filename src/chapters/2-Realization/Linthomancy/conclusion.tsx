@@ -1,5 +1,5 @@
 import { Slide, Appear, UnorderedList, ListItem } from "spectacle";
-import { CommandHeading } from "@Components/CommandHeading";
+import { CommandHeading } from "@Components/CommandHeading/CommandHeading";
 
 export const LintConclusionSlide = () => (
   <Slide>

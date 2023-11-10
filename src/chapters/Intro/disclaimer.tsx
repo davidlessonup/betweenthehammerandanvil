@@ -1,6 +1,7 @@
 import { Slide, Notes, Appear, UnorderedList, ListItem } from "spectacle";
-import { CommandHeading } from "@Components/CommandHeading";
-import { NotesTable } from "@Components/NotesTable";
+import { CommandHeading } from "@Components/CommandHeading/CommandHeading";
+import { AnimatedDeprecation } from "@Components/Deprecated/AnimatedDeprecation";
+import { NotesTable } from "@Components/NotesTable/NotesTable";
 
 export const IntroductionDisclaimerSlide = () => (
   <Slide>
@@ -27,6 +28,13 @@ export const IntroductionDisclaimerSlide = () => (
             <Appear>
               <ListItem>{"Not too technical"}</ListItem>
             </Appear>
+            <Appear>
+              <ListItem>
+                <AnimatedDeprecation>
+                  {"There won't be any software jokes"}
+                </AnimatedDeprecation>
+              </ListItem>
+            </Appear>
           </UnorderedList>
         </ListItem>
       </Appear>
@@ -43,9 +51,12 @@ const IntroductionDisclaimerNotes = () => (
         "I'm NOT an expert",
         "As for this talk:",
         "I aim to convey my observations and experiences I've come across my career",
-        "It does not focus on Frontend or Backend",
+        "It does not focus on either Frontend or Backend",
         "Any code examples will be in TypeScript",
         "In addition I will avoid being extremely technical",
+        "I won't make any software jokes",
+        "This talk has been deprecated and rewritten about 10 times, ...like most JS frameworks",
+        "Oops.",
       ]}
     />
   </Notes>

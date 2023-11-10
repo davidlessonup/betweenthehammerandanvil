@@ -1,5 +1,5 @@
 import { UnorderedList, ListItem, Appear, Slide } from "spectacle";
-import { CommandHeading } from "@Components/CommandHeading";
+import { CommandHeading } from "@Components/CommandHeading/CommandHeading";
 import { Quote } from "@Components/Quote/Quote";
 
 export const OutroSlide = () => (
