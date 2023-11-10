@@ -1,5 +1,4 @@
 import { Slide, Notes, Stepper } from "spectacle";
-import { CommandHeading } from "@Components/CommandHeading/CommandHeading";
 import styled from "@emotion/styled";
 import RadarChart from "react-svg-radar-chart";
 import "react-svg-radar-chart/build/css/index.css";
@@ -180,15 +179,23 @@ const RadarChartComponent: React.FC<RadarChartComponentProps> = ({ data }) => (
       }}
       captions={captions}
       data={data}
-      size={400}
+      size={420}
     />
   </StyledRadarChart>
 );
 
 export const PurposeArchetypesSlide = () => (
   <Slide>
-    <CommandHeading>{"cat archetypes.txt"}</CommandHeading>
-    <Stepper tagName="div" values={stepperValues as unknown as string[]}>
+    <StyledRadarChartNotationWrapper>
+      <span>{"R - Reliability"}</span>
+      <span>{"D - Delivery"}</span>
+      <span>{"E - Expandability"}</span>
+    </StyledRadarChartNotationWrapper>
+    <Stepper
+      alwaysVisible
+      tagName="div"
+      values={stepperValues as unknown as string[]}
+    >
       {(value) => {
         const singleValue = stateMapper[value as DiagramSteps]?.single ?? [];
         const doubleValue = stateMapper[value as DiagramSteps]?.double ?? [];
@@ -207,24 +214,30 @@ export const PurposeArchetypesSlide = () => (
         );
       }}
     </Stepper>
-    <StyledRadarChartNotationWrapper>
-      <div>
-        <div>{"R - Reliability"}</div>
-        <div>{"D - Delivery"}</div>
-        <div>{"E - Expandability"}</div>
-      </div>
-    </StyledRadarChartNotationWrapper>
     <PurposeArchetypesNotes />
   </Slide>
 );
 
 const PurposeArchetypesNotes = () => (
   <Notes>
+    {
+      "If we consider software development as three dimensional, with those dimensions being:"
+    }
     <NotesTable
       slideName="definition-archetypes"
       notes={["Reliability", "Delivery", "Expandability"]}
     />
-    {"There is always a tradeoff, this is a zero sum game."}
+    {
+      "We can see how focusing solely on one, has devastating outcomes to the other dimensions"
+    }
+    <p />
+    {
+      "Now if we were to focus on two at a time, there would be a small decline to each dimensions' maximum but an overall improvement"
+    }
+    <p />
+    {"But ideally we want to focus on all three, at all times"}
+    <p />
+    {"This brings us to what I believe to be an uncomfortable truth"}
   </Notes>
 );
 
@@ -243,5 +256,8 @@ const StyledRadarChartNotationWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  color: ${colors.secondary};
+  color: ${colors.primary};
+  gap: 10px;
+  padding-top: 50px;
+  padding-bottom: 75px;
 `;

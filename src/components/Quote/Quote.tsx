@@ -14,7 +14,7 @@ export const Quote: React.FC<React.PropsWithChildren<QuoteProps>> = ({
   <StyledQuote>
     <span data-quote>
       <StyledQuoteIconWrapper>
-        <FaQuoteLeft fill={colors.secondary} size="24" />
+        <FaQuoteLeft fill={colors.secondary} size="24px" />
       </StyledQuoteIconWrapper>
       <span>{children}</span>
       <StyledQuoteIconWrapper>
@@ -35,6 +35,7 @@ const StyledQuote = styled.div`
   display: flex;
   flex-direction: column;
   padding: 5px;
+  font-size: 44px;
 
   &::before,
   &::after {

@@ -4,8 +4,8 @@ import { PurposeSubChapter } from "./Purpose";
 
 export const DefinitionChapter = () => (
   <>
-    <DeveloperExperienceSubChapter />
     <BlacksmithingSubChapter />
+    <DeveloperExperienceSubChapter />
     <PurposeSubChapter />
   </>
 );

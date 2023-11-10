@@ -17,12 +17,12 @@ export const ProfessionalIntroductionSlide = () => (
       </Appear>
       <Appear priority={2}>
         <FlexBox alignItems="center" justifyContent="center">
-          <Text>{"Code Golfer"}</Text>
+          <Text>{"Code golfer"}</Text>
         </FlexBox>
       </Appear>
       <Appear priority={3}>
         <FlexBox alignItems="center" justifyContent="center">
-          <Text>{"UI/UX fanatic"}</Text>
+          <Text>{"UI/UX advocate"}</Text>
         </FlexBox>
       </Appear>
       <Appear priority={1}>

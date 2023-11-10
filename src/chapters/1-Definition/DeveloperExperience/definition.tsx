@@ -1,8 +1,9 @@
-import { Slide, Appear } from "spectacle";
+import { Slide, Appear, Notes } from "spectacle";
 import { CommandHeading } from "@Components/CommandHeading/CommandHeading";
 import { Definition } from "@Components/Definition/Definition";
 import styled from "@emotion/styled";
 import { SubHeading } from "@Components/SubHeading/SubHeading";
+import { NotesTable } from "@Components/NotesTable/NotesTable";
 
 export const DeveloperExperienceDefinitionSlide = () => (
   <Slide>
@@ -21,6 +22,7 @@ export const DeveloperExperienceDefinitionSlide = () => (
         </Definition>
       </Appear>
     </StyledDefinitionsWrapper>
+    <DeveloperExperienceDefinitionNotes />
   </Slide>
 );
 
@@ -31,3 +33,13 @@ const StyledDefinitionsWrapper = styled.div`
   align-items: center;
   justify-content: space-around;
 `;
+
+const DeveloperExperienceDefinitionNotes = () => (
+  <Notes>
+    {"And now we arrive to the most important concept"}
+    <NotesTable
+      slideName="definition-developer-experience-definition"
+      notes={["Developer Experience"]}
+    />
+  </Notes>
+);

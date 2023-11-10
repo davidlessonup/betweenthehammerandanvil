@@ -1,5 +1,4 @@
-import { Slide, Notes, Stepper } from "spectacle";
-import { CommandHeading } from "@Components/CommandHeading/CommandHeading";
+import { SlideLayout, Notes, Stepper } from "spectacle";
 import styled from "@emotion/styled";
 import { colors } from "@Foundations/colors";
 import { AiOutlineArrowRight } from "react-icons/ai";
@@ -23,8 +22,7 @@ const stepperValues = [
 type StepperValues = (typeof stepperValues)[number];
 
 export const PurposeAreaOfEffectSlide = () => (
-  <Slide>
-    <CommandHeading>{"cat area.txt"}</CommandHeading>
+  <SlideLayout.Center>
     <StyledWrapper>
       <Stepper tagName="div" values={stepperValues as unknown as string[]}>
         {(value) => {
@@ -93,7 +91,7 @@ export const PurposeAreaOfEffectSlide = () => (
       </Stepper>
     </StyledWrapper>
     <PurposeAreaOfEffectNotes />
-  </Slide>
+  </SlideLayout.Center>
 );
 
 const shouldHighlight = function shouldHighlight(
@@ -113,7 +111,7 @@ const PurposeAreaOfEffectNotes = () => (
     {"This talk will focus on the following aspects:"}
     <NotesTable
       slideName="defintion-aoe"
-      notes={["Development", "Testing & QA", "Maintenance"]}
+      notes={["Development", "Testing & QA, to some extent", "Maintenance"]}
     />
   </Notes>
 );

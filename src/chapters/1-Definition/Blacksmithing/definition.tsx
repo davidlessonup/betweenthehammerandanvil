@@ -31,10 +31,14 @@ export const BlacksmithDefinitionSlide = () => (
 
 const BlacksmithDefinitionNotes = () => (
   <Notes>
-    {"This talk will focus on the following aspects:"}
     <NotesTable
       slideName="definition-blacksmith-definition"
-      notes={["Development", "Testing & QA", "Maintenance"]}
+      notes={[
+        "Before we go any further, we'll start by defining the meta topics of this talk.",
+        "Blacksmithing",
+        "Everyone knows what a blacksmith is, right?",
+        "The biggest focus here, is being able to make their own tools",
+      ]}
     />
   </Notes>
 );

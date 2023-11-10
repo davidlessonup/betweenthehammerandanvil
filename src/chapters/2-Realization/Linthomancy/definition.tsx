@@ -1,4 +1,4 @@
-import { Appear, Slide, Grid, FlexBox } from "spectacle";
+import { Appear, Slide, Grid, FlexBox, Notes } from "spectacle";
 import { CommandHeading } from "@Components/CommandHeading/CommandHeading";
 import { Definition } from "@Components/Definition/Definition";
 import { colors } from "@Foundations/colors";
@@ -33,5 +33,14 @@ export const LinthomanyDefinitionSlide = () => (
         </FlexBox>
       </Appear>
     </Grid>
+    <LinthomancyDefinitionNotes />
   </Slide>
+);
+
+const LinthomancyDefinitionNotes = () => (
+  <Notes>
+    {"Has anyone here know the concept of lithomacy?"}
+    <p />
+    {"What about LINThomacy?"}
+  </Notes>
 );

@@ -177,6 +177,7 @@ const StyledTable = styled.div`
   display: flex;
   flex-wrap: wrap;
   font-size: 20px;
+  padding-left: 100px;
 `;
 
 const StyledTableSection = styled.div<{ disabled: boolean }>`
