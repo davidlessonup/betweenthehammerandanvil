@@ -1,5 +1,5 @@
-import { Heading, Slide, SpectacleLogo } from "spectacle";
-import { LinuxCommandSpan } from "@Components/LinuxCommandSpan/LinuxCommandSpan";
+import { Slide, SpectacleLogo } from "spectacle";
+import { CommandHeading } from "@Components/CommandHeading";
 import styled from "@emotion/styled";
 import { colors } from "@Foundations/colors";
 import { BiLogoTypescript, BiLogoReact } from "react-icons/bi";
@@ -17,9 +17,7 @@ const reactIcons =
 
 export const StackSlide = () => (
   <Slide>
-    <Heading>
-      <LinuxCommandSpan>{"tail stack.json"}</LinuxCommandSpan>
-    </Heading>
+    <CommandHeading>{"tail stack.json"}</CommandHeading>
     <StyledStackListWrapper>
       <StyledStackListEntry>
         {"React"}

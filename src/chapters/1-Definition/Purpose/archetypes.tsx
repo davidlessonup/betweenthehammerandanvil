@@ -1,17 +1,11 @@
-import {
-  Heading,
-  Slide,
-  Notes,
-  UnorderedList,
-  ListItem,
-  Stepper,
-} from "spectacle";
-import { LinuxCommandSpan } from "@Components/LinuxCommandSpan/LinuxCommandSpan";
+import { Slide, Notes, Stepper } from "spectacle";
+import { CommandHeading } from "@Components/CommandHeading";
 import styled from "@emotion/styled";
 import RadarChart from "react-svg-radar-chart";
 import "react-svg-radar-chart/build/css/index.css";
 import { fonts } from "@Foundations/typography";
 import { colors, chartColors } from "@Foundations/colors";
+import { NotesTable } from "@Components/NotesTable";
 
 interface RadarChartData {
   data: {
@@ -193,9 +187,7 @@ const RadarChartComponent: React.FC<RadarChartComponentProps> = ({ data }) => (
 
 export const PurposeArchetypesSlide = () => (
   <Slide>
-    <Heading>
-      <LinuxCommandSpan>{"cat archetypes.txt"}</LinuxCommandSpan>
-    </Heading>
+    <CommandHeading>{"cat archetypes.txt"}</CommandHeading>
     <Stepper tagName="div" values={stepperValues as unknown as string[]}>
       {(value) => {
         const singleValue = stateMapper[value as DiagramSteps]?.single ?? [];
@@ -228,12 +220,11 @@ export const PurposeArchetypesSlide = () => (
 
 const PurposeArchetypesNotes = () => (
   <Notes>
-    {"There is always a tradeoff between, this is a zero sum game."}
-    <UnorderedList>
-      <ListItem>{"Reliability"}</ListItem>
-      <ListItem>{"Delivery"}</ListItem>
-      <ListItem>{"Expandability"}</ListItem>
-    </UnorderedList>
+    <NotesTable
+      slideName="definition-archetypes"
+      notes={["Reliability", "Delivery", "Expandability"]}
+    />
+    {"There is always a tradeoff, this is a zero sum game."}
   </Notes>
 );
 

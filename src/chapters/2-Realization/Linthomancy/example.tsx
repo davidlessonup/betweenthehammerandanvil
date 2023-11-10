@@ -1,5 +1,5 @@
-import { Heading, Slide, Stepper } from "spectacle";
-import { LinuxCommandSpan } from "@Components/LinuxCommandSpan/LinuxCommandSpan";
+import { Slide, Stepper } from "spectacle";
+import { CommandHeading } from "@Components/CommandHeading";
 import { CodeExample, CodeExampleVersion } from "./components/CodeExample";
 
 const determineWhichVersionToShow = function determineWhichVersionToShow(
@@ -17,9 +17,7 @@ const determineWhichVersionToShow = function determineWhichVersionToShow(
 
 export const LintStrengthCodeExampleSlide = () => (
   <Slide>
-    <Heading>
-      <LinuxCommandSpan>{"git commit"}</LinuxCommandSpan>
-    </Heading>
+    <CommandHeading>{"git commit"}</CommandHeading>
     <Stepper tagName="div" alwaysVisible values={["errors", "fixed"]}>
       {(value) => <CodeExample version={determineWhichVersionToShow(value)} />}
     </Stepper>

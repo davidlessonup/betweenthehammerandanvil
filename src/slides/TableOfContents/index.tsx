@@ -67,7 +67,7 @@ export const TableOfContentsSlide: React.FC<TableOfContentsSlideProps> = ({
           {topic}
         </ContentEntry>
       ))}
-      <ContentEntry hide={false} deprecated={chapter >= topics.length + 2}>
+      <ContentEntry hide={false} deprecated={chapter >= topics.length + 3}>
         {"Outro"}
       </ContentEntry>
     </UnorderedList>

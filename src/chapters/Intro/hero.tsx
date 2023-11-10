@@ -1,8 +1,9 @@
 import { Heading, Slide, Grid, FlexBox, Notes } from "spectacle";
 import { colors } from "@Foundations/colors";
 import { GiAnvilImpact } from "react-icons/gi";
+import { NotesTable } from "@Components/NotesTable";
 
-export const LandingSlide = () => (
+export const HeroSlide = () => (
   <Slide>
     <Grid gridTemplateColumns="100%" gridTemplateRows="100%" height="100%">
       <FlexBox alignItems="center" justifyContent="center">
@@ -14,15 +15,15 @@ export const LandingSlide = () => (
         </Heading>
       </FlexBox>
     </Grid>
-    <LandingNotes />
+    <HeroNotes />
   </Slide>
 );
 
-const LandingNotes = () => (
+const HeroNotes = () => (
   <Notes>
-    <ul>
-      <li>{"Make sure everyone joined"}</li>
-      <li>{"Start recording"}</li>
-    </ul>
+    <NotesTable
+      slideName="intro-hero"
+      notes={["Make sure everyone joined", "Start recording"]}
+    />
   </Notes>
 );

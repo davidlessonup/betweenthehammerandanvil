@@ -5,6 +5,7 @@ import { DefinitionChapter } from "@Chapters/1-Definition";
 import { RealizationChapter } from "@Chapters/2-Realization";
 import { CautionChapter } from "@Chapters/3-Caution";
 import { OutroChapter } from "@Chapters/Outro";
+import { QAChapter } from "@Chapters/QA";
 import { TableOfContentsSlide } from "@Slides/TableOfContents";
 import { theme, slideTransition } from "@Templates/Theme/Theme";
 import styled from "@emotion/styled";
@@ -26,6 +27,7 @@ export const SlideDeck = () => (
       <CautionChapter />
       <TableOfContentsSlide chapter={4} />
       <OutroChapter />
+      <QAChapter />
     </Deck>
   </StyledDeckWrapper>
 );

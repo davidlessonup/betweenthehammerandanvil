@@ -1,18 +1,9 @@
-import {
-  Heading,
-  Slide,
-  Notes,
-  UnorderedList,
-  ListItem,
-  Appear,
-} from "spectacle";
-import { LinuxCommandSpan } from "@Components/LinuxCommandSpan/LinuxCommandSpan";
+import { Slide, Notes, UnorderedList, ListItem, Appear } from "spectacle";
+import { CommandHeading } from "@Components/CommandHeading";
 
 export const CautionSlide = () => (
   <Slide>
-    <Heading>
-      <LinuxCommandSpan>{"cat caution.txt"}</LinuxCommandSpan>
-    </Heading>
+    <CommandHeading>{"cat caution.txt"}</CommandHeading>
     <UnorderedList>
       <Appear>
         <ListItem>{"Never let tools become crutches."}</ListItem>

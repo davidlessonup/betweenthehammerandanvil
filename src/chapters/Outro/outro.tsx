@@ -1,12 +1,10 @@
-import { Heading, UnorderedList, ListItem, Appear, Slide } from "spectacle";
-import { LinuxCommandSpan } from "@Components/LinuxCommandSpan/LinuxCommandSpan";
+import { UnorderedList, ListItem, Appear, Slide } from "spectacle";
+import { CommandHeading } from "@Components/CommandHeading";
 import { Quote } from "@Components/Quote/Quote";
 
 export const OutroSlide = () => (
   <Slide>
-    <Heading>
-      <LinuxCommandSpan>{"pkill -9 presentation"}</LinuxCommandSpan>
-    </Heading>
+    <CommandHeading>{"pkill -9 presentation"}</CommandHeading>
     <UnorderedList>
       <Appear>
         <Quote author="Jean-Paul Sartre">

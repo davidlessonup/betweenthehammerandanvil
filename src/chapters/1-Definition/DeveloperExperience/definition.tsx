@@ -1,22 +1,23 @@
-import { Heading, Slide, Appear } from "spectacle";
-import { LinuxCommandSpan } from "@Components/LinuxCommandSpan/LinuxCommandSpan";
+import { Slide, Appear } from "spectacle";
+import { CommandHeading } from "@Components/CommandHeading";
 import { Definition } from "@Components/Definition/Definition";
 import styled from "@emotion/styled";
+import { SubHeading } from "@Components/SubHeading";
 
 export const DeveloperExperienceDefinitionSlide = () => (
   <Slide>
-    <Heading>
-      <LinuxCommandSpan>{"find . -regex 'dx'"}</LinuxCommandSpan>
-    </Heading>
+    <CommandHeading>{"find . -regex 'dx'"}</CommandHeading>
     <StyledDefinitionsWrapper>
       <Appear>
-        <Definition>
-          {`Developer Experience encompasses the experiences of your internal software developers as they carry out their work...`}
-        </Definition>
+        <SubHeading>{"Developer Experience"}</SubHeading>
       </Appear>
       <Appear>
         <Definition>
-          {`...that involves making sure their tools, processes, and working environment are all conducive to their best work.`}
+          {`... encompasses the experiences of your internal software developers as they carry out their work.`}
+          <p />
+          <Appear>
+            {`... that involves making sure their tools, processes, and working environment are all conducive to their best work.`}
+          </Appear>
         </Definition>
       </Appear>
     </StyledDefinitionsWrapper>

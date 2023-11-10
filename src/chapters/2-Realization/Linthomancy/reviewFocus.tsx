@@ -1,12 +1,6 @@
-import {
-  Heading,
-  Slide,
-  Notes,
-  UnorderedList,
-  ListItem,
-  Stepper,
-} from "spectacle";
-import { LinuxCommandSpan } from "@Components/LinuxCommandSpan/LinuxCommandSpan";
+import { Slide, Notes, UnorderedList, ListItem, Stepper } from "spectacle";
+import { CommandHeading } from "@Components/CommandHeading";
+import { Quote } from "@Components/Quote/Quote";
 import styled from "@emotion/styled";
 import RadarChart from "react-svg-radar-chart";
 import "react-svg-radar-chart/build/css/index.css";
@@ -25,7 +19,7 @@ interface RadarChartData {
   };
 }
 
-const stepperValues = ["default", "improved"] as const;
+const stepperValues = ["default", "improved", "quote"] as const;
 
 type DiagramSteps = (typeof stepperValues)[number];
 
@@ -52,6 +46,7 @@ const improvedChartData: RadarChartData = {
 const stateMapper: Record<DiagramSteps, RadarChartData[]> = {
   default: [defaultChartData],
   improved: [defaultChartData, improvedChartData],
+  quote: [defaultChartData, improvedChartData],
 };
 
 const captions = {
@@ -63,36 +58,43 @@ const captions = {
 
 export const LinthomancyReviewFocusSlide = () => (
   <Slide>
-    <Heading>
-      <LinuxCommandSpan>{"cat archetypes.txt"}</LinuxCommandSpan>
-    </Heading>
+    <CommandHeading>{"cat focus.txt"}</CommandHeading>
     <Stepper tagName="div" values={stepperValues as unknown as string[]}>
       {(value) => {
         const data = stateMapper[value as DiagramSteps] ?? [];
 
         return (
-          <StyledRadarChart>
-            <RadarChart
-              options={{
-                zoomDistance: 1.3,
-                captionProps: () => ({
-                  className: "styled-caption",
-                  textAnchor: "middle",
-                  fontSize: 16,
-                  fontFamily: fonts,
-                }),
-              }}
-              captions={captions}
-              data={data}
-              size={550}
-            />
-            <div>
-              <div>{"R - Readability"}</div>
-              <div>{"S - Standards"}</div>
-              <div>{"F - Flow"}</div>
-              <div>{"P - Performance"}</div>
-            </div>
-          </StyledRadarChart>
+          <>
+            <StyledRadarChart>
+              <RadarChart
+                options={{
+                  zoomDistance: 1.3,
+                  captionProps: () => ({
+                    className: "styled-caption",
+                    textAnchor: "middle",
+                    fontSize: 16,
+                    fontFamily: fonts,
+                  }),
+                }}
+                captions={captions}
+                data={data}
+                size={400}
+              />
+              <div>
+                <div>{"R - Readability"}</div>
+                <div>{"S - Standards"}</div>
+                <div>{"F - Flow"}</div>
+                <div>{"P - Performance"}</div>
+              </div>
+            </StyledRadarChart>{" "}
+            {value === "quote" && (
+              <StyledQuoteWrapper>
+                <Quote author="Sun Tzu">
+                  {"The greatest victory is that which requires no battle."}
+                </Quote>
+              </StyledQuoteWrapper>
+            )}
+          </>
         );
       }}
     </Stepper>
@@ -129,4 +131,10 @@ const StyledRadarChartNotationWrapper = styled.div`
   flex-direction: row;
   justify-content: center;
   color: ${colors.secondary};
+`;
+
+const StyledQuoteWrapper = styled.div`
+  padding-top: 25px;
+  display: flex;
+  justify-content: center;
 `;

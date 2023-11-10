@@ -11,7 +11,7 @@ export const LinuxCommandSpan: React.FC<LinuxCommandSpanProps> = ({
   children,
 }) => (
   <CodeSpanWrapper>
-    <CodeSpan>
+    <CodeSpan fontSize="40px">
       <DebouncedIntersection ms={500}>
         <TypingEffect length={children.length + 1}>{children}</TypingEffect>
       </DebouncedIntersection>

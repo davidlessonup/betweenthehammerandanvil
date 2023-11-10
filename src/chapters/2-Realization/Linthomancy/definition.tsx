@@ -1,14 +1,12 @@
-import { Heading, Appear, Slide, Grid, FlexBox } from "spectacle";
-import { LinuxCommandSpan } from "@Components/LinuxCommandSpan/LinuxCommandSpan";
+import { Appear, Slide, Grid, FlexBox } from "spectacle";
+import { CommandHeading } from "@Components/CommandHeading";
 import { Definition } from "@Components/Definition/Definition";
 import { colors } from "@Foundations/colors";
 import { AiOutlineArrowDown } from "react-icons/ai";
 
 export const LinthomanyDefinitionSlide = () => (
   <Slide>
-    <Heading>
-      <LinuxCommandSpan>{"find . -regex 'lin?thomancy'"}</LinuxCommandSpan>
-    </Heading>
+    <CommandHeading>{"find . -regex 'lin?thomancy'"}</CommandHeading>
     <Grid
       gridTemplateColumns="100%"
       gridTemplateRows="30% 20% 30%"

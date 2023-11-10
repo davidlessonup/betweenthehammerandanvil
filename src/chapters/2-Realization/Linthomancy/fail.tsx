@@ -1,5 +1,5 @@
-import { Heading, Slide, Stepper } from "spectacle";
-import { LinuxCommandSpan } from "@Components/LinuxCommandSpan/LinuxCommandSpan";
+import { Slide, Stepper } from "spectacle";
+import { CommandHeading } from "@Components/CommandHeading";
 import styled from "@emotion/styled";
 import { AiOutlinePlus, AiOutlineMinus, AiOutlineInfo } from "react-icons/ai";
 import { colors } from "@Foundations/colors";
@@ -119,7 +119,8 @@ const stepsMapper: Record<TableSteps, TableEntries[]> = {
 const TableSection: React.FC<{
   data: TableColumn;
   showHighlight: boolean;
-}> = ({ data, showHighlight }) => (
+  step: TableSteps;
+}> = ({ data, showHighlight, step }) => (
   <StyledTableSection disabled={showHighlight && !data.highlight}>
     <TableHeading
       highlight={showHighlight && data.highlight}
@@ -128,26 +129,33 @@ const TableSection: React.FC<{
       {data.title}
     </TableHeading>
     <TableEntryDescription>{data.description}</TableEntryDescription>
-    {data.pros.map((pro) => (
-      <TableEntryPro>{pro}</TableEntryPro>
+    {data.pros.map((pro, index) => (
+      <TableEntryPro key={`table-section-pro-${step}-${index}`}>
+        {pro}
+      </TableEntryPro>
     ))}
-    {data.cons.map((con) => (
-      <TableEntryCon>{con}</TableEntryCon>
+    {data.cons.map((con, index) => (
+      <TableEntryCon key={`table-section-pro-${step}-${index}`}>
+        {con}
+      </TableEntryCon>
     ))}
   </StyledTableSection>
 );
 
-const getTableElements = (steps: TableEntries[], v: TableSteps) =>
-  steps &&
-  steps.map((step) => (
-    <TableSection data={table[step]} showHighlight={v === "preference"} />
+const getTableElements = (entries: TableEntries[], step: TableSteps) =>
+  entries &&
+  entries.map((entry) => (
+    <TableSection
+      data={table[entry]}
+      showHighlight={step === "preference"}
+      step={step}
+      key={`table-section-${step}-${entry}`}
+    />
   ));
 
 export const LinthomancyFailSlide = () => (
   <Slide>
-    <Heading>
-      <LinuxCommandSpan>{"git push --force"}</LinuxCommandSpan>
-    </Heading>
+    <CommandHeading>{"git push --force"}</CommandHeading>
     <Stepper
       tagName="div"
       alwaysVisible

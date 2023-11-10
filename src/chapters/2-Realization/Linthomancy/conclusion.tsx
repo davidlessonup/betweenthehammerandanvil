@@ -1,11 +1,9 @@
-import { Heading, Slide, Appear, UnorderedList, ListItem } from "spectacle";
-import { LinuxCommandSpan } from "@Components/LinuxCommandSpan/LinuxCommandSpan";
+import { Slide, Appear, UnorderedList, ListItem } from "spectacle";
+import { CommandHeading } from "@Components/CommandHeading";
 
 export const LintConclusionSlide = () => (
   <Slide>
-    <Heading>
-      <LinuxCommandSpan>{"git checkout"}</LinuxCommandSpan>
-    </Heading>
+    <CommandHeading>{"git checkout"}</CommandHeading>
     <UnorderedList>
       <Appear>
         <ListItem>

@@ -1,11 +1,10 @@
-import { Heading, Text, Appear, Slide, Grid, FlexBox, Notes } from "spectacle";
-import { LinuxCommandSpan } from "@Components/LinuxCommandSpan/LinuxCommandSpan";
+import { Text, Appear, Slide, Grid, FlexBox, Notes } from "spectacle";
+import { CommandHeading } from "@Components/CommandHeading";
+import { NotesTable } from "@Components/NotesTable";
 
 export const ProfessionalIntroductionSlide = () => (
   <Slide>
-    <Heading>
-      <LinuxCommandSpan>{"who -a"}</LinuxCommandSpan>
-    </Heading>
+    <CommandHeading>{"who -a"}</CommandHeading>
     <Grid
       gridTemplateColumns="50% 50%"
       gridTemplateRows="50% 50%"
@@ -36,4 +35,16 @@ export const ProfessionalIntroductionSlide = () => (
   </Slide>
 );
 
-const ProfessionalIntroductionNotes = () => <Notes />;
+const ProfessionalIntroductionNotes = () => (
+  <Notes>
+    <NotesTable
+      slideName="intro-professional"
+      notes={[
+        "I've been coding for 22 years",
+        "I enjoy pushing CSS to it's limits",
+        "I dabble in code golfing from time to time",
+        "I champion for good UI/UX approches",
+      ]}
+    />
+  </Notes>
+);

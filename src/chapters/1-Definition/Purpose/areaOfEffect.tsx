@@ -1,16 +1,10 @@
-import {
-  Heading,
-  Slide,
-  Notes,
-  UnorderedList,
-  ListItem,
-  Stepper,
-} from "spectacle";
+import { Slide, Notes, Stepper } from "spectacle";
+import { CommandHeading } from "@Components/CommandHeading";
 import styled from "@emotion/styled";
-import { LinuxCommandSpan } from "@Components/LinuxCommandSpan/LinuxCommandSpan";
 import { colors } from "@Foundations/colors";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { ImInfinite } from "react-icons/im";
+import { NotesTable } from "@Components/NotesTable";
 
 type StyledDiagramRectangleType = "neutral" | "highlighted" | "inactive";
 
@@ -30,9 +24,7 @@ type StepperValues = (typeof stepperValues)[number];
 
 export const PurposeAreaOfEffectSlide = () => (
   <Slide>
-    <Heading>
-      <LinuxCommandSpan>{"cat area.txt"}</LinuxCommandSpan>
-    </Heading>
+    <CommandHeading>{"cat area.txt"}</CommandHeading>
     <StyledWrapper>
       <Stepper tagName="div" values={stepperValues as unknown as string[]}>
         {(value) => {
@@ -119,11 +111,10 @@ const shouldHighlight = function shouldHighlight(
 const PurposeAreaOfEffectNotes = () => (
   <Notes>
     {"This talk will focus on the following aspects:"}
-    <UnorderedList>
-      <ListItem>{"Development"}</ListItem>
-      <ListItem>{"Testing & QA"}</ListItem>
-      <ListItem>{"Maintenance"}</ListItem>
-    </UnorderedList>
+    <NotesTable
+      slideName="defintion-aoe"
+      notes={["Development", "Testing & QA", "Maintenance"]}
+    />
   </Notes>
 );
 
