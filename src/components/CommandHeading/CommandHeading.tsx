@@ -9,8 +9,8 @@ export interface CommandHeadingProps {
   children: LinuxCommandSpanProps["children"];
 }
 
-export const CommandHeading: React.FC<CommandHeadingProps> = () => (
+export const CommandHeading: React.FC<CommandHeadingProps> = ({ children }) => (
   <Heading fontSize="40px">
-    <LinuxCommandSpan>{"find . -regex 'blacksmith'"}</LinuxCommandSpan>
+    <LinuxCommandSpan>{children}</LinuxCommandSpan>
   </Heading>
 );
