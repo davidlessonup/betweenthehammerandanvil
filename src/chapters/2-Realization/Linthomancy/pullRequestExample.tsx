@@ -10,7 +10,7 @@ export const LinthomancyPullRequestExampleSlide = () => (
   <SlideLayout.Center>
     <PullRequest>
       <PullRequestHeader files={6} added={487} removed={125} />
-      <PullRequestFile name="components/index.tsx" comments={5} checked />
+      <PullRequestFile name="components/index.ts" comments={5} checked />
       <PullRequestFile name="components/Label/index.tsx" comments={3} checked />
       <PullRequestFile
         name="components/Label/index.spec.tsx"
@@ -23,7 +23,7 @@ export const LinthomancyPullRequestExampleSlide = () => (
         checked
       />
       <PullRequestFile
-        name="components/Label/index.utils.tsx"
+        name="components/Label/index.utils.ts"
         comments={7}
         checked
       />

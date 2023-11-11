@@ -30,7 +30,7 @@ export const LintStrengthCodeExampleSlide = () => (
         <PullRequest>
           <PullRequestHeader files={1} added={10} removed={0} />
           <PullRequestFile
-            name="components/Label/index.utils.tsx"
+            name="components/Label/index.utils.ts"
             comments={value === "errors" ? 7 : 0}
             checked={value === "errors"}
           />
@@ -52,7 +52,7 @@ export const LintStrengthCodeFixedExampleSlide = () => (
         <PullRequest>
           <PullRequestHeader files={1} added={10} removed={0} />
           <PullRequestFile
-            name="components/Label/index.utils.tsx"
+            name="components/Label/index.utils.ts"
             comments={value === "fixed" ? 0 : 7}
             checked
           />

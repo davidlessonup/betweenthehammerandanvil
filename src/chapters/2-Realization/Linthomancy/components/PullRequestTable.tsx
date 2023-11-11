@@ -31,6 +31,9 @@ export const PullRequestHeader: React.FC<PullRequestHeaderProps> = ({
   <StyledPullRequestHeader>
     <StyledPullRequestHeaderIcon>
       <BiGitPullRequest />
+      <StyledPullRequestLabelWrapper>
+        {"Files changed"}
+      </StyledPullRequestLabelWrapper>
     </StyledPullRequestHeaderIcon>
     <StyledPullRequestSection textColor="files">
       <BiFile />
@@ -57,7 +60,10 @@ export const PullRequestFile: React.FC<
   React.PropsWithChildren<PullRequestFileProps>
 > = ({ name, comments, checked, children }) => (
   <StyledPullRequestFileSection>
-    <StyledPullRequestFileSectionName>{name}</StyledPullRequestFileSectionName>
+    <StyledPullRequestFileSectionName>
+      <BiFile color={colors.secondary} />
+      <StyledPullRequestLabelWrapper>{name}</StyledPullRequestLabelWrapper>
+    </StyledPullRequestFileSectionName>
     <StyledPullRequestFileSectionComments amount={comments}>
       <StyledPullRequestLabelWrapper>
         {comments > 0 && comments}
@@ -72,7 +78,7 @@ export const PullRequestFile: React.FC<
 );
 
 const StyledPullRequestLabelWrapper = styled.span`
-  padding: 0px 10px;
+  padding: 0px 5px;
 `;
 
 const StyledPullRequestFileSection = styled.div`
@@ -82,6 +88,8 @@ const StyledPullRequestFileSection = styled.div`
 
 const StyledPullRequestFileSectionName = styled.span`
   flex: 1;
+  display: flex;
+  align-items: center;
 `;
 
 const StyledPullRequestFileSectionComments = styled.span<{ amount: number }>`
@@ -123,6 +131,8 @@ const StyledPullRequestHeaderIcon = styled.div`
   padding: 20px;
   flex: 1;
   color: ${pullRequestColors.unchecked};
+  display: flex;
+  align-items: center;
 `;
 
 type StyledPullRequestSectionTextColor = "added" | "removed" | "files";
@@ -134,7 +144,6 @@ interface StyledPullRequestSectionProps {
 const StyledPullRequestSection = styled.div<StyledPullRequestSectionProps>`
   display: flex;
   align-items: center;
-  border-left: 1px solid ${colors.secondary};
-  padding: 20px;
+  padding: 20px 10px;
   color: ${(props) => pullRequestColors[props.textColor]};
 `;
