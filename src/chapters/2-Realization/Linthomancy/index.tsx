@@ -1,5 +1,10 @@
 import { LinthomancyReviewFocusSlide } from "./reviewFocus";
-import { LintStrengthCodeExampleSlide } from "./example";
+import {
+  LintStrengthCodeExampleSlide,
+  LintStrengthCodeFixedExampleSlide,
+} from "./example";
+import { LinthomancyPullRequestExampleSlide } from "./pullRequestExample";
+import { LinthomancyLintDefinitionSlide } from "./lintDefinition";
 import { LinthomanyDefinitionSlide } from "./definition";
 import { LinthomancyReviewFocusRevisedSlide } from "./reviewFocusRevised";
 import { LinthomancySunTzuSlide } from "./suntzu";
@@ -10,8 +15,11 @@ export const LinthomancySubChapter = () => (
   <>
     <LinthomancyReviewFocusSlide />
     <LintStrengthCodeExampleSlide />
-    <LinthomanyDefinitionSlide />
+    <LinthomancyPullRequestExampleSlide />
+    <LinthomancyLintDefinitionSlide />
+    <LintStrengthCodeFixedExampleSlide />
     <LinthomancyReviewFocusRevisedSlide />
+    <LinthomanyDefinitionSlide />
     <LinthomancySunTzuSlide />
     <LinthomancyFailSlide />
     <LintConclusionSlide />

@@ -23,8 +23,6 @@ export const LinthomanyDefinitionSlide = () => (
         <FlexBox alignItems="center" justifyContent="center">
           <AiOutlineArrowDown size="80" fill={colors.primary} />
         </FlexBox>
-      </Appear>
-      <Appear>
         <FlexBox alignItems="center" justifyContent="center">
           <Definition>
             {`LINThomancy is a form of development by which the review is

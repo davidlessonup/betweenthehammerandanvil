@@ -29,3 +29,11 @@ export const codeBlockColors = {
   literalValue: variant.lavender.hex,
   error: variant.red.hex,
 };
+
+export const pullRequestColors = {
+  added: variant.green.hex,
+  removed: variant.red.hex,
+  files: variant.peach.hex,
+  unchecked: variant.subtext0.hex,
+  checked: variant.green.hex,
+};

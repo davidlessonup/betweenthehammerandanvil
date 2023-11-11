@@ -18,18 +18,18 @@ export interface RadarChartData {
 
 export const defaultReviewChartData: RadarChartData = {
   data: {
-    readability: 0.3,
-    standards: 0.3,
-    flow: 0.3,
-    performance: 0.3,
+    readability: 0.5,
+    standards: 0.5,
+    flow: 0.5,
+    performance: 0.5,
   },
   meta: { color: chartColors.primary },
 };
 
 export const improvedReviewChartData: RadarChartData = {
   data: {
-    readability: 0.3,
-    standards: 0.3,
+    readability: 0.5,
+    standards: 0.5,
     flow: 1,
     performance: 1,
   },

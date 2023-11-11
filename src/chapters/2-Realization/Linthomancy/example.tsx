@@ -2,9 +2,15 @@ import { Slide, Stepper, Notes } from "spectacle";
 import { CommandHeading } from "@Components/CommandHeading/CommandHeading";
 import { CodeExample, CodeExampleVersion } from "./components/CodeExample";
 import { NotesTable } from "@Components/NotesTable/NotesTable";
+import {
+  PullRequest,
+  PullRequestHeader,
+  PullRequestFile,
+} from "./components/PullRequestTable";
 
 const determineWhichVersionToShow = function determineWhichVersionToShow(
   version: unknown,
+  defaultVersion: CodeExampleVersion,
 ): CodeExampleVersion {
   switch (version) {
     case "fixed":
@@ -12,15 +18,47 @@ const determineWhichVersionToShow = function determineWhichVersionToShow(
     case "errors":
       return "errors";
     default:
-      return "default";
+      return defaultVersion;
   }
 };
 
 export const LintStrengthCodeExampleSlide = () => (
   <Slide>
     <CommandHeading>{"git commit"}</CommandHeading>
-    <Stepper tagName="div" alwaysVisible values={["errors", "fixed"]}>
-      {(value) => <CodeExample version={determineWhichVersionToShow(value)} />}
+    <Stepper tagName="div" alwaysVisible values={["errors"]}>
+      {(value) => (
+        <PullRequest>
+          <PullRequestHeader files={1} added={10} removed={0} />
+          <PullRequestFile
+            name="components/Label/index.utils.tsx"
+            comments={value === "errors" ? 7 : 0}
+            checked={value === "errors"}
+          />
+          <CodeExample
+            version={determineWhichVersionToShow(value, "default")}
+          />
+        </PullRequest>
+      )}
+    </Stepper>
+    <LintStrengthCodeExampleNotes />
+  </Slide>
+);
+
+export const LintStrengthCodeFixedExampleSlide = () => (
+  <Slide>
+    <CommandHeading>{"git commit"}</CommandHeading>
+    <Stepper tagName="div" alwaysVisible values={["fixed"]}>
+      {(value) => (
+        <PullRequest>
+          <PullRequestHeader files={1} added={10} removed={0} />
+          <PullRequestFile
+            name="components/Label/index.utils.tsx"
+            comments={value === "fixed" ? 0 : 7}
+            checked
+          />
+          <CodeExample version={determineWhichVersionToShow(value, "errors")} />
+        </PullRequest>
+      )}
     </Stepper>
     <LintStrengthCodeExampleNotes />
   </Slide>
@@ -38,18 +76,8 @@ const LintStrengthCodeExampleNotes = () => (
       notes={[
         "How many issues can you spot?",
         "There are 7 change requests in this 10 LoC snippet",
-        "Multiply that by more files, and reviewers",
-        "Also add in the amount of time needed to apply those changes",
-        "Factor in human error from all parties, things like these might slide",
+        "But a pull request usually isn't just one file, is it?",
       ]}
     />
-    <p />
-    {
-      "The problem this creates is not necessarily a waste of time, but a waste of focus"
-    }
-    <p />
-    {
-      "Therefore it is a better approach to just delegate these things to linters, who can clean it up automatically"
-    }
   </Notes>
 );

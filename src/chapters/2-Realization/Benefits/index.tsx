@@ -12,6 +12,9 @@ export const BenefitsSubChapter = () => (
         <ListItem>{"Automated assistance"}</ListItem>
       </Appear>
       <Appear>
+        <ListItem>{"Leading by example"}</ListItem>
+      </Appear>
+      <Appear>
         <ListItem>{"Incredible guideship to junior members"}</ListItem>
       </Appear>
     </UnorderedList>
