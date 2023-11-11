@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { borderRadius } from "@Foundations/borders";
 import { codeBlockColors } from "@Foundations/colors";
 import { fonts, codeFonts } from "@Foundations/typography";
 
@@ -207,6 +208,7 @@ const StyledCodeSection = styled.div`
   color: ${codeBlockColors.declaration};
   padding: 10px 20px;
   font-size: 22px;
+  border-radius: ${borderRadius};
 `;
 
 interface CodeBlockSectionProps {

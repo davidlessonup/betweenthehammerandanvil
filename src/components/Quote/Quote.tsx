@@ -2,6 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import { colors } from "@Foundations/colors";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
+import { borderRadius } from "@Foundations/borders";
 
 export interface QuoteProps {
   author: string;
@@ -49,6 +50,7 @@ const StyledQuote = styled.div`
     left: 0;
     border-left: 1px solid ${colors.secondary};
     border-top: 1px solid ${colors.secondary};
+    border-top-left-radius: ${borderRadius};
   }
 
   &::after {
@@ -56,6 +58,7 @@ const StyledQuote = styled.div`
     top: calc(100% - 8vw);
     border-right: 1px solid ${colors.secondary};
     border-bottom: 1px solid ${colors.secondary};
+    border-bottom-right-radius: ${borderRadius};
   }
 
   & > [data-quote] {

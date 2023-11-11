@@ -4,6 +4,7 @@ import { colors } from "@Foundations/colors";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { ImInfinite } from "react-icons/im";
 import { NotesTable } from "@Components/NotesTable/NotesTable";
+import { borderRadius } from "@Foundations/borders";
 
 type StyledDiagramRectangleType = "neutral" | "highlighted" | "inactive";
 
@@ -148,6 +149,7 @@ const StyledDiagramRectangle = styled.div<StyledDiagramRectangleProps>`
   color: ${colors.quaternary};
   padding: 10px;
   opacity: ${getOpacity};
+  border-radius: ${borderRadius};
 `;
 
 const StyledWrapper = styled.div`

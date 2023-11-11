@@ -11,6 +11,7 @@ import styled from "@emotion/styled";
 import { pullRequestColors, colors } from "@Foundations/colors";
 import { codeFonts } from "@Foundations/typography";
 import React from "react";
+import { borderRadius } from "@Foundations/borders";
 
 export const PullRequest: React.FC<React.PropsWithChildren> = ({
   children,
@@ -101,6 +102,7 @@ const StyledPullRequestFileSectionStatus = styled.span<{ checked: boolean }>`
 
 const StyledPullRequest = styled.div`
   border: 1px solid ${colors.secondary};
+  border-radius: ${borderRadius};
 
   & ${StyledPullRequestFileSection} + ${StyledPullRequestFileSection} {
     border-top: 1px solid ${colors.secondary};

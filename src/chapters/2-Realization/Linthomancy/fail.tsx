@@ -198,7 +198,8 @@ const StyledTableHeading = styled.div<TableHeadingProps>`
   font-size: 30px;
 
   & > span {
-    ${(props) => props.highlight && `border: 2px solid ${colors.primary};`}
+    ${(props) =>
+      props.highlight && `border-bottom: 2px solid ${colors.primary};`}
   }
 `;
 
