@@ -191,11 +191,7 @@ export const PurposeArchetypesSlide = () => (
       <span>{"D - Delivery"}</span>
       <span>{"E - Expandability"}</span>
     </StyledRadarChartNotationWrapper>
-    <Stepper
-      alwaysVisible
-      tagName="div"
-      values={stepperValues as unknown as string[]}
-    >
+    <Stepper tagName="div" values={stepperValues as unknown as string[]}>
       {(value) => {
         const singleValue = stateMapper[value as DiagramSteps]?.single ?? [];
         const doubleValue = stateMapper[value as DiagramSteps]?.double ?? [];

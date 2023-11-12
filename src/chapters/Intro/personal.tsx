@@ -22,7 +22,7 @@ export const PersonalIntroductionSlide = () => (
       </Appear>
       <Appear priority={3}>
         <FlexBox alignItems="center" justifyContent="center">
-          <Text>{"JRPG aficionado"}</Text>
+          <Text>{"JRPG enthusiast"}</Text>
         </FlexBox>
       </Appear>
       <Appear priority={1}>

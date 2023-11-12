@@ -1,1 +1,3 @@
-export const ToolingSubChapter = () => null;
+import { ToolingOnboardingSlide } from "./onboarding";
+
+export const ToolingSubChapter = () => <ToolingOnboardingSlide />;

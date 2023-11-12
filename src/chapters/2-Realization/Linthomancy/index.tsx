@@ -1,3 +1,4 @@
+import { LinthomancyReviewSlide } from "./review";
 import { LinthomancyReviewFocusSlide } from "./reviewFocus";
 import {
   LintStrengthCodeExampleSlide,
@@ -13,6 +14,7 @@ import { LintConclusionSlide } from "./conclusion";
 
 export const LinthomancySubChapter = () => (
   <>
+    <LinthomancyReviewSlide />
     <LinthomancyReviewFocusSlide />
     <LintStrengthCodeExampleSlide />
     <LinthomancyPullRequestExampleSlide />

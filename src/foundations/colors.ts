@@ -37,3 +37,16 @@ export const pullRequestColors = {
   unchecked: variant.subtext0.hex,
   checked: variant.green.hex,
 };
+
+export const fileSystemColors = {
+  neutral: variant.peach.hex,
+  active: variant.base.hex,
+  system: variant.maroon.hex,
+};
+
+export const markdownColors = {
+  code: {
+    background: variant.base.hex,
+    text: variant.yellow.hex,
+  },
+};

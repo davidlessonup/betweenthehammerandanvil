@@ -5,7 +5,6 @@ import {
   ReviewFocusRadarChart,
   RadarChartData,
 } from "./components/ReviewFocusChart";
-import { NotesTable } from "@Components/NotesTable/NotesTable";
 
 const stepperValues = ["default"] as const;
 
@@ -34,25 +33,14 @@ export const LinthomancyReviewFocusSlide = () => (
 
 const LinthomancyReviewFocusNotes = () => (
   <Notes>
-    {"Let's consider the act of Code Review, and it's purpose."}
-    <p />
-    {"It aims to:"}
-    <NotesTable
-      slideName="review-focus-linthomancy"
-      notes={[
-        "Catch unwanted effects",
-        "Sanity check the approaches",
-        "Keep development in a straight path",
-        "And to help enforce agreed upon standards",
-      ]}
-    />
     {
-      "Now if we were to divide the action of of a Code Review into four dimensions, those being:"
+      "Now if we take those dimensions of a code review, ideally they'd have an uneven split of effort:"
     }
-    <NotesTable
-      slideName="review-focus-linthomancy"
-      notes={["Readability", "Standards", "Flow", "Performance"]}
-    />
+    <p />
+    {
+      "This ends up requiring a lot of mental effort, which can have it's own pitfalls"
+    }
+    <p />
     {
       "Is there something we can do to maximize one or more dimensions without afecting the others?"
     }

@@ -16,9 +16,7 @@ export const DeveloperExperienceDefinitionSlide = () => (
         <Definition>
           {`... encompasses the experiences of your internal software developers as they carry out their work.`}
           <p />
-          <Appear>
-            {`... that involves making sure their tools, processes, and working environment are all conducive to their best work.`}
-          </Appear>
+          <Appear>{}</Appear>
         </Definition>
       </Appear>
     </StyledDefinitionsWrapper>
@@ -39,7 +37,11 @@ const DeveloperExperienceDefinitionNotes = () => (
     {"And now we arrive to the most important concept"}
     <NotesTable
       slideName="definition-developer-experience-definition"
-      notes={["Developer Experience"]}
+      notes={[
+        "Developer Experience",
+        `... encompasses the experiences of your internal software developers as they carry out their work.`,
+        `... that involves making sure their tools, processes, and working environment are all conducive to their best work.`,
+      ]}
     />
   </Notes>
 );

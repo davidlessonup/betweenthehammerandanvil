@@ -1,10 +1,10 @@
-import { Heading, Slide, Grid, FlexBox, Notes } from "spectacle";
+import { Heading, SlideLayout, Grid, FlexBox, Notes } from "spectacle";
 import { colors } from "@Foundations/colors";
 import { GiAnvilImpact } from "react-icons/gi";
 import { NotesTable } from "@Components/NotesTable/NotesTable";
 
 export const HeroSlide = () => (
-  <Slide>
+  <SlideLayout.Center>
     <Grid gridTemplateColumns="100%" gridTemplateRows="100%" height="100%">
       <FlexBox alignItems="center" justifyContent="center">
         <Heading>
@@ -16,7 +16,7 @@ export const HeroSlide = () => (
       </FlexBox>
     </Grid>
     <HeroNotes />
-  </Slide>
+  </SlideLayout.Center>
 );
 
 const HeroNotes = () => (

@@ -45,19 +45,21 @@ export const IntroductionDisclaimerSlide = () => (
 
 const IntroductionDisclaimerNotes = () => (
   <Notes>
+    {"I'm NOT an expert"}
+    <p />
+    {"As for this talk:"}
     <NotesTable
       slideName="intro-disclaimer"
       notes={[
-        "I'm NOT an expert",
-        "As for this talk:",
         "I aim to convey my observations and experiences I've come across my career",
         "It does not focus on either Frontend or Backend",
         "Any code examples will be in TypeScript",
         "In addition I will avoid being extremely technical",
         "I won't make any software jokes",
-        "This talk has been deprecated and rewritten about 10 times, ...like most JS frameworks",
-        "Oops.",
       ]}
     />
+    {"This talk has been refactored 10 times, ...like most JS frameworks"}
+    <p />
+    {"Oops."}
   </Notes>
 );

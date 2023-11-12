@@ -79,6 +79,7 @@ const StyledRadarChart = styled.div`
   justify-content: center;
   align-items: center;
   gap: 100px;
+
   .styled-caption {
     fill: ${colors.secondary};
   }

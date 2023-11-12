@@ -16,7 +16,6 @@ const stepperValues = [
   "diagram",
   "inactive",
   "development",
-  "testing",
   "maintenance",
 ] as const;
 
@@ -50,7 +49,7 @@ export const PurposeAreaOfEffectSlide = () => (
               <StyledDiagramRectangle
                 type={shouldHighlight(
                   value,
-                  ["development", "testing", "maintenance"],
+                  ["development", "maintenance"],
                   defaultValue,
                 )}
               >
@@ -59,13 +58,7 @@ export const PurposeAreaOfEffectSlide = () => (
               <StyledDiagramIconWrapper>
                 <AiOutlineArrowRight />
               </StyledDiagramIconWrapper>
-              <StyledDiagramRectangle
-                type={shouldHighlight(
-                  value,
-                  ["testing", "maintenance"],
-                  defaultValue,
-                )}
-              >
+              <StyledDiagramRectangle type={defaultValue}>
                 {"Testing / QA"}
               </StyledDiagramRectangle>
               <StyledDiagramIconWrapper>
@@ -116,7 +109,7 @@ const PurposeAreaOfEffectNotes = () => (
     {"This talk will focus on the following aspects:"}
     <NotesTable
       slideName="defintion-aoe"
-      notes={["Development", "Testing & QA, to some extent", "Maintenance"]}
+      notes={["Development", "Maintenance"]}
     />
   </Notes>
 );
