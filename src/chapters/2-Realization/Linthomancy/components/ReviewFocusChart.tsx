@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import RadarChart from "react-svg-radar-chart";
-import "react-svg-radar-chart/build/css/index.css";
 import { fonts } from "@Foundations/typography";
 import { colors, chartColors } from "@Foundations/colors";
 

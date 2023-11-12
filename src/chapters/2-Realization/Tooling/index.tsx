@@ -1,3 +1,11 @@
 import { ToolingOnboardingSlide } from "./onboarding";
+import { ToolingSlide } from "./tooling";
+import { ToolingExamplesSlide } from "./examples";
 
-export const ToolingSubChapter = () => <ToolingOnboardingSlide />;
+export const ToolingSubChapter = () => (
+  <>
+    <ToolingSlide />
+    <ToolingOnboardingSlide />
+    <ToolingExamplesSlide />
+  </>
+);

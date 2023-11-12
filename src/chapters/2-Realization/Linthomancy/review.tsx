@@ -6,7 +6,6 @@ import {
   ListItem,
   Appear,
 } from "spectacle";
-import "react-svg-radar-chart/build/css/index.css";
 import { NotesTable } from "@Components/NotesTable/NotesTable";
 import styled from "@emotion/styled";
 import { colors } from "@Foundations/colors";

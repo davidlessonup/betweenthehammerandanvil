@@ -8,7 +8,7 @@ export const IntroductionDisclaimerSlide = () => (
     <CommandHeading>{"cat disclaimer.txt"}</CommandHeading>
     <UnorderedList>
       <Appear>
-        <ListItem>{"I'm not an expert, just an observer"}</ListItem>
+        <ListItem>{"I'm not an expert, but an observer"}</ListItem>
       </Appear>
       <Appear>
         <ListItem>

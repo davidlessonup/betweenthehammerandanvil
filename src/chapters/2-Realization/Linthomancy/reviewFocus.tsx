@@ -1,5 +1,4 @@
 import { SlideLayout, Notes, Stepper } from "spectacle";
-import "react-svg-radar-chart/build/css/index.css";
 import {
   defaultReviewChartData,
   ReviewFocusRadarChart,

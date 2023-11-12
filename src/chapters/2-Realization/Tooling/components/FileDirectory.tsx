@@ -9,18 +9,19 @@ export const FileDirectory: React.FC<React.PropsWithChildren> = ({
 }) => <StyledFileDirectory>{children}</StyledFileDirectory>;
 
 export interface FileDirectoryFolderProps {
+  expanded: boolean;
   name: string;
   nestLevel: number;
 }
 
 export const FileDirectoryFolder: React.FC<
   React.PropsWithChildren<FileDirectoryFolderProps>
-> = ({ name, nestLevel, children }) => (
+> = ({ expanded, name, nestLevel, children }) => (
   <StyledFileDirectoryFolder>
     <StyledFileDirectoryFolderName nestLevel={nestLevel}>
       <BiFolder color={fileSystemColors.neutral} />
       {name}
-      <BiCollapseVertical color={fileSystemColors.system} />
+      {expanded && <BiCollapseVertical />}
     </StyledFileDirectoryFolderName>
     {children}
   </StyledFileDirectoryFolder>
@@ -38,10 +39,8 @@ export const FileDirectoryFile: React.FC<FileDirectoryFileProps> = ({
   nestLevel,
 }) => (
   <StyledFileDirectoryFile active={active} nestLevel={nestLevel}>
-    <span>
-      <BiFile color={fileSystemColors.neutral} />
-      {name}
-    </span>
+    <BiFile color={fileSystemColors.neutral} />
+    {name}
   </StyledFileDirectoryFile>
 );
 
@@ -67,8 +66,9 @@ const StyledFileDirectoryFolderName = styled.span<FileDirectoryNestingProps>`
   gap: 10px;
   padding: 10px ${getNestingPaddingValue}px;
 
-  & svg:last-of-type {
+  & svg::not(:first-of-type):last-of-type {
     margin-left: auto;
+    color: ${fileSystemColors.neutral};
   }
 `;
 
@@ -79,6 +79,8 @@ interface StyledFileDirectoryFileProps extends FileDirectoryNestingProps {
 const StyledFileDirectoryFile = styled.div<StyledFileDirectoryFileProps>`
   gap: 10px;
   padding: 10px ${getNestingPaddingValue}px;
+  display: flex;
+  align-items: center;
 
   ${(props) => props.active && `background: ${fileSystemColors.active};`}
 

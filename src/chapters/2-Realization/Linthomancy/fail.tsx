@@ -1,8 +1,9 @@
-import { Slide, Stepper } from "spectacle";
+import { Slide, Stepper, Notes } from "spectacle";
 import { CommandHeading } from "@Components/CommandHeading/CommandHeading";
 import styled from "@emotion/styled";
 import { AiOutlinePlus, AiOutlineMinus, AiOutlineInfo } from "react-icons/ai";
 import { colors } from "@Foundations/colors";
+import { NotesTable } from "@Components/NotesTable/NotesTable";
 
 const TableEntryDescription: React.FC<React.PropsWithChildren> = ({
   children,
@@ -170,7 +171,34 @@ export const LinthomancyFailSlide = () => (
         </StyledTable>
       )}
     </Stepper>
+    <LinthomancyFailNotes />
   </Slide>
+);
+
+const LinthomancyFailNotes = () => (
+  <Notes>
+    {"The local build"}
+    <NotesTable
+      slideName="list-fail-local"
+      notes={["It can impact productivity"]}
+    />
+    {"The code editor"}
+    <NotesTable
+      slideName="list-fail-ide"
+      notes={["Developers can turn it off"]}
+    />
+    {"A git hook"}
+    <NotesTable
+      slideName="list-fail-githook"
+      notes={["It can be bypassed with flags"]}
+    />
+    {"The build"}
+    <NotesTable
+      slideName="list-fail-build"
+      notes={["It might slowdown builds when there are trivial issues"]}
+    />
+    {"My personal preference is all of the latter 3 at the same time"}
+  </Notes>
 );
 
 const StyledTable = styled.div`
