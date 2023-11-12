@@ -9,7 +9,7 @@ export const LinthomanyDefinitionSlide = () => (
     <CommandHeading>{"find . -regex 'lin?thomancy'"}</CommandHeading>
     <Grid
       gridTemplateColumns="100%"
-      gridTemplateRows="30% 20% 30%"
+      gridTemplateRows="20% 20% 30%"
       height="100%"
     >
       <Appear>
@@ -26,7 +26,7 @@ export const LinthomanyDefinitionSlide = () => (
         <FlexBox alignItems="center" justifyContent="center">
           <Definition>
             {`LINThomancy is a form of development by which the review is
-            performed by only looking at the flow of the code and it's organization.`}
+            performed by only looking at the flow of the code.`}
           </Definition>
         </FlexBox>
       </Appear>

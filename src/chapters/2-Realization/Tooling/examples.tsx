@@ -1,5 +1,5 @@
 import {
-  Slide,
+  SlideLayout,
   Notes,
   Heading,
   UnorderedList,
@@ -13,7 +13,7 @@ import styled from "@emotion/styled";
 import { colors } from "@Foundations/colors";
 
 export const ToolingExamplesSlide = () => (
-  <Slide>
+  <SlideLayout.Center>
     <Heading>{"Examples of tools"}</Heading>
     <UnorderedList>
       <Appear>
@@ -58,7 +58,7 @@ export const ToolingExamplesSlide = () => (
       </Appear>
     </UnorderedList>
     <ToolingExamplesNotes />
-  </Slide>
+  </SlideLayout.Center>
 );
 
 const ToolingExamplesNotes = () => (

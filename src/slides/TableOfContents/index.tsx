@@ -1,4 +1,4 @@
-import { Heading, UnorderedList, ListItem, Slide } from "spectacle";
+import { Heading, UnorderedList, ListItem, SlideLayout } from "spectacle";
 import { Deprecated } from "@Components/Deprecated/Deprecated";
 import { LinuxCommandSpan } from "@Components/LinuxCommandSpan/LinuxCommandSpan";
 import React from "react";
@@ -50,7 +50,7 @@ const longest = topics.reduce((acc, t) => (t.length > acc ? t.length : acc), 0);
 export const TableOfContentsSlide: React.FC<TableOfContentsSlideProps> = ({
   chapter = 1,
 }) => (
-  <Slide>
+  <SlideLayout.Center>
     <Heading>
       <LinuxCommandSpan>{"ls -lh"}</LinuxCommandSpan>
     </Heading>
@@ -71,7 +71,7 @@ export const TableOfContentsSlide: React.FC<TableOfContentsSlideProps> = ({
         {"Outro"}
       </ContentEntry>
     </UnorderedList>
-  </Slide>
+  </SlideLayout.Center>
 );
 
 const HiddenWrapper = styled.div`

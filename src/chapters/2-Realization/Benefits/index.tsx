@@ -1,10 +1,16 @@
-import { Slide, UnorderedList, ListItem, Appear, Notes } from "spectacle";
-import { CommandHeading } from "@Components/CommandHeading/CommandHeading";
+import {
+  SlideLayout,
+  UnorderedList,
+  ListItem,
+  Appear,
+  Notes,
+  Heading,
+} from "spectacle";
 import { NotesTable } from "@Components/NotesTable/NotesTable";
 
 export const BenefitsSubChapter = () => (
-  <Slide>
-    <CommandHeading>{"cat benefits.txt"}</CommandHeading>
+  <SlideLayout.Center>
+    <Heading>{"Benefits"}</Heading>
     <UnorderedList>
       <Appear>
         <ListItem>{"Easier onboarding"}</ListItem>
@@ -20,7 +26,7 @@ export const BenefitsSubChapter = () => (
       </Appear>
     </UnorderedList>
     <BenefitsNotes />
-  </Slide>
+  </SlideLayout.Center>
 );
 
 const BenefitsNotes = () => (

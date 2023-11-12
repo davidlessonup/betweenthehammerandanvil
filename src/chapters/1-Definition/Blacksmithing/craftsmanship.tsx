@@ -1,14 +1,11 @@
-import { Slide, Appear, Notes, Text, FlexBox } from "spectacle";
-import { CommandHeading } from "@Components/CommandHeading/CommandHeading";
+import { SlideLayout, Appear, Notes, Text, FlexBox, Heading } from "spectacle";
 import { Definition } from "@Components/Definition/Definition";
-import { SubHeading } from "@Components/SubHeading/SubHeading";
 import { NotesTable } from "@Components/NotesTable/NotesTable";
 
 export const SoftwareCraftsmanshipDefinitionSlide = () => (
-  <Slide>
-    <CommandHeading>{"find . -regex 'craftsmanship'"}</CommandHeading>
+  <SlideLayout.Center>
     <Appear>
-      <SubHeading>{"Software Craftsmanship"}</SubHeading>
+      <Heading>{"Software Craftsmanship"}</Heading>
     </Appear>
     <Appear>
       <Definition>
@@ -20,13 +17,13 @@ export const SoftwareCraftsmanshipDefinitionSlide = () => (
       <FlexBox alignSelf="center">
         <Text fontSize="33px">
           {
-            "It's ethos can be summarized as mastering the craft and not the tools"
+            "It's essence can be summarized as mastering the craft and not the tools"
           }
         </Text>
       </FlexBox>
     </Appear>
     <SoftwareCraftsmanshipDefinitionNotes />
-  </Slide>
+  </SlideLayout.Center>
 );
 
 const SoftwareCraftsmanshipDefinitionNotes = () => (
@@ -36,7 +33,7 @@ const SoftwareCraftsmanshipDefinitionNotes = () => (
       notes={[
         "Now we go into Craftsmanship",
         "More specifically, Software Craftsmanship",
-        "It's ethos can be summarized as mastering the craft and not the tools",
+        "It's essence can be summarized as mastering the craft and not the tools",
       ]}
     />
   </Notes>

@@ -19,7 +19,8 @@ const StyledEditor = styled.div`
   display: flex;
   border: 1px solid ${fileSystemColors.neutral};
   border-radius: ${borderRadius};
-  width: 85vw;
+  width: 60vw;
+  height: 50vh;
 `;
 
 const StyledEditorLeftSection = styled.div`
@@ -29,5 +30,5 @@ const StyledEditorLeftSection = styled.div`
 
 const StyledEditorRightSection = styled.div`
   padding: 0px 20px;
-  width: 65vw;
+  width: 40vw;
 `;

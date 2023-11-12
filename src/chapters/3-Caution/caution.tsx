@@ -1,10 +1,16 @@
-import { Slide, Notes, UnorderedList, ListItem, Appear } from "spectacle";
-import { CommandHeading } from "@Components/CommandHeading/CommandHeading";
+import {
+  SlideLayout,
+  Notes,
+  UnorderedList,
+  ListItem,
+  Appear,
+  Heading,
+} from "spectacle";
 import { NotesTable } from "@Components/NotesTable/NotesTable";
 
 export const CautionSlide = () => (
-  <Slide>
-    <CommandHeading>{"cat caution.txt"}</CommandHeading>
+  <SlideLayout.Center>
+    <Heading>{"But beware"}</Heading>
     <UnorderedList>
       <Appear>
         <ListItem>{"Never let tools become crutches"}</ListItem>
@@ -22,7 +28,7 @@ export const CautionSlide = () => (
       </Appear>
     </UnorderedList>
     <IntroductionDisclaimerNotes />
-  </Slide>
+  </SlideLayout.Center>
 );
 
 const IntroductionDisclaimerNotes = () => (

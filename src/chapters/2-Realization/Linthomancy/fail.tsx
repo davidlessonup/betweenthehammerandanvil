@@ -1,5 +1,4 @@
 import { Slide, Stepper, Notes } from "spectacle";
-import { CommandHeading } from "@Components/CommandHeading/CommandHeading";
 import styled from "@emotion/styled";
 import { AiOutlinePlus, AiOutlineMinus, AiOutlineInfo } from "react-icons/ai";
 import { colors } from "@Foundations/colors";
@@ -156,10 +155,10 @@ const getTableElements = (entries: TableEntries[], step: TableSteps) =>
 
 export const LinthomancyFailSlide = () => (
   <Slide>
-    <CommandHeading>{"git push --force"}</CommandHeading>
     <Stepper
       tagName="div"
       alwaysVisible
+      activeStyle={{ paddingTop: "150px" }}
       values={stepperValues as unknown as TableSteps[]}
     >
       {(value) => (
@@ -206,6 +205,7 @@ const StyledTable = styled.div`
   flex-wrap: wrap;
   font-size: 20px;
   padding-left: 100px;
+  align-items: center;
 `;
 
 const StyledTableSection = styled.div<{ disabled: boolean }>`

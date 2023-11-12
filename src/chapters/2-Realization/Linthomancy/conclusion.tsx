@@ -1,10 +1,16 @@
-import { Slide, Appear, UnorderedList, ListItem, Notes } from "spectacle";
-import { CommandHeading } from "@Components/CommandHeading/CommandHeading";
+import {
+  SlideLayout,
+  Appear,
+  UnorderedList,
+  ListItem,
+  Notes,
+  Heading,
+} from "spectacle";
 import { NotesTable } from "@Components/NotesTable/NotesTable";
 
 export const LintConclusionSlide = () => (
-  <Slide>
-    <CommandHeading>{"git checkout"}</CommandHeading>
+  <SlideLayout.Center>
+    <Heading>{"Takeaways"}</Heading>
     <UnorderedList>
       <Appear>
         <ListItem>
@@ -22,7 +28,7 @@ export const LintConclusionSlide = () => (
       </Appear>
     </UnorderedList>
     <LintConclusionNotes />
-  </Slide>
+  </SlideLayout.Center>
 );
 
 const LintConclusionNotes = () => (

@@ -1,16 +1,13 @@
-import { Slide, Appear, Notes } from "spectacle";
-import { CommandHeading } from "@Components/CommandHeading/CommandHeading";
+import { SlideLayout, Appear, Notes, Heading } from "spectacle";
 import { Definition } from "@Components/Definition/Definition";
 import styled from "@emotion/styled";
-import { SubHeading } from "@Components/SubHeading/SubHeading";
 import { NotesTable } from "@Components/NotesTable/NotesTable";
 
 export const DeveloperExperienceDefinitionSlide = () => (
-  <Slide>
-    <CommandHeading>{"find . -regex 'dx'"}</CommandHeading>
+  <SlideLayout.Center>
     <StyledDefinitionsWrapper>
       <Appear>
-        <SubHeading>{"Developer Experience"}</SubHeading>
+        <Heading>{"Developer Experience"}</Heading>
       </Appear>
       <Appear>
         <Definition>
@@ -21,7 +18,7 @@ export const DeveloperExperienceDefinitionSlide = () => (
       </Appear>
     </StyledDefinitionsWrapper>
     <DeveloperExperienceDefinitionNotes />
-  </Slide>
+  </SlideLayout.Center>
 );
 
 const StyledDefinitionsWrapper = styled.div`
