@@ -73,7 +73,7 @@ export const PurposeAreaOfEffectSlide = () => (
               <StyledDiagramRectangle
                 type={shouldHighlight(value, ["maintenance"], defaultValue)}
               >
-                {"Maintenace"}
+                {"Maintenance"}
               </StyledDiagramRectangle>
               <StyledDiagramIconWrapper>
                 <AiOutlineArrowRight />
