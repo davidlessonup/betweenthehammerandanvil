@@ -12,21 +12,20 @@ type StyledDiagramRectangleProps = {
   type: StyledDiagramRectangleType;
 };
 
-const stepperValues = [
-  "diagram",
-  "inactive",
-  "development",
-  "maintenance",
-] as const;
+const stepperValues = ["effect"] as const;
 
 type StepperValues = (typeof stepperValues)[number];
 
 export const PurposeAreaOfEffectSlide = () => (
   <SlideLayout.Center>
     <StyledWrapper>
-      <Stepper tagName="div" values={stepperValues as unknown as string[]}>
+      <Stepper
+        alwaysVisible
+        tagName="div"
+        values={stepperValues as unknown as string[]}
+      >
         {(value) => {
-          const defaultValue = value === "diagram" ? "neutral" : "inactive";
+          const defaultValue = value !== "effect" ? "neutral" : "inactive";
 
           return (
             <StyledDiagramWrapper>
@@ -47,11 +46,7 @@ export const PurposeAreaOfEffectSlide = () => (
                 <AiOutlineArrowRight />
               </StyledDiagramIconWrapper>
               <StyledDiagramRectangle
-                type={shouldHighlight(
-                  value,
-                  ["development", "maintenance"],
-                  defaultValue,
-                )}
+                type={shouldHighlight(value, ["effect"], defaultValue)}
               >
                 {"Development"}
               </StyledDiagramRectangle>
@@ -71,7 +66,7 @@ export const PurposeAreaOfEffectSlide = () => (
                 <AiOutlineArrowRight />
               </StyledDiagramIconWrapper>
               <StyledDiagramRectangle
-                type={shouldHighlight(value, ["maintenance"], defaultValue)}
+                type={shouldHighlight(value, ["effect"], defaultValue)}
               >
                 {"Maintenance"}
               </StyledDiagramRectangle>

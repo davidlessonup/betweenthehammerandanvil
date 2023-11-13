@@ -15,29 +15,9 @@ interface RadarChartData {
   };
 }
 
-const stepperValues = [
-  "empty",
-  "r",
-  "d",
-  "e",
-  "rd",
-  "de",
-  "re",
-  "rde",
-] as const;
+const stepperValues = ["r", "d", "e", "rd", "de", "re", "rde"] as const;
 
 type DiagramSteps = (typeof stepperValues)[number];
-
-const singleEmpty: RadarChartData[] = [
-  {
-    data: {
-      reliability: 0,
-      delivery: 0,
-      expandability: 0,
-    },
-    meta: { color: chartColors.primary },
-  },
-];
 
 const singleRFocus: RadarChartData = {
   data: {
@@ -111,11 +91,6 @@ type StateMapperEntry = {
 };
 
 const stateMapper: Record<DiagramSteps, StateMapperEntry> = {
-  empty: {
-    single: singleEmpty,
-    double: [],
-    triple: [],
-  },
   r: {
     single: [singleRFocus],
     double: [],
@@ -189,7 +164,11 @@ export const PurposeArchetypesSlide = () => (
       <span>{"D - Delivery"}</span>
       <span>{"E - Expandability"}</span>
     </StyledRadarChartNotationWrapper>
-    <Stepper tagName="div" values={stepperValues as unknown as string[]}>
+    <Stepper
+      alwaysVisible
+      tagName="div"
+      values={stepperValues as unknown as string[]}
+    >
       {(value) => {
         const singleValue = stateMapper[value as DiagramSteps]?.single ?? [];
         const doubleValue = stateMapper[value as DiagramSteps]?.double ?? [];

@@ -4,9 +4,7 @@ import { NotesTable } from "@Components/NotesTable/NotesTable";
 
 export const SoftwareCraftsmanshipDefinitionSlide = () => (
   <SlideLayout.Center>
-    <Appear>
-      <Heading>{"Software Craftsmanship"}</Heading>
-    </Appear>
+    <Heading>{"Software Craftsmanship"}</Heading>
     <Appear>
       <Definition>
         {`... is an approach to software development that

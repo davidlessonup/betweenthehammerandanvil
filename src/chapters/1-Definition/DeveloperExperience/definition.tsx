@@ -6,9 +6,7 @@ import { NotesTable } from "@Components/NotesTable/NotesTable";
 export const DeveloperExperienceDefinitionSlide = () => (
   <SlideLayout.Center>
     <StyledDefinitionsWrapper>
-      <Appear>
-        <Heading>{"Developer Experience"}</Heading>
-      </Appear>
+      <Heading>{"Developer Experience"}</Heading>
       <Appear>
         <Definition>
           {`... encompasses the experiences of your internal software developers as they carry out their work.`}

@@ -42,8 +42,8 @@ const StyledQuote = styled.div`
   &::after {
     content: " ";
     position: absolute;
-    height: 6vw;
-    width: 8vw;
+    height: 50%;
+    width: 25%;
   }
 
   &::before {
@@ -55,7 +55,7 @@ const StyledQuote = styled.div`
 
   &::after {
     right: 0;
-    top: calc(100% - 8vw);
+    top: calc(100% - 50%);
     border-right: 1px solid ${colors.secondary};
     border-bottom: 1px solid ${colors.secondary};
     border-bottom-right-radius: ${borderRadius};

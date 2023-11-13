@@ -1,5 +1,4 @@
 import { Slide, Stepper, Notes } from "spectacle";
-import { CommandHeading } from "@Components/CommandHeading/CommandHeading";
 import { CodeExample, CodeExampleVersion } from "./components/CodeExample";
 import { NotesTable } from "@Components/NotesTable/NotesTable";
 import {
@@ -24,7 +23,7 @@ const determineWhichVersionToShow = function determineWhichVersionToShow(
 
 export const LintStrengthCodeExampleSlide = () => (
   <Slide>
-    <CommandHeading>{"git commit"}</CommandHeading>
+    <div style={{ paddingTop: "100px" }} />
     <Stepper tagName="div" alwaysVisible values={["errors"]}>
       {(value) => (
         <PullRequest>
@@ -46,7 +45,7 @@ export const LintStrengthCodeExampleSlide = () => (
 
 export const LintStrengthCodeFixedExampleSlide = () => (
   <Slide>
-    <CommandHeading>{'git commit -m "fixed"'}</CommandHeading>
+    <div style={{ paddingTop: "100px" }} />
     <Stepper tagName="div" alwaysVisible values={["fixed"]}>
       {(value) => (
         <PullRequest>

@@ -207,6 +207,7 @@ const StyledCodeSection = styled.div`
   background-color: ${codeBlockColors.background};
   color: ${codeBlockColors.declaration};
   padding: 10px 20px;
+  min-height: 40vh;
   font-size: 22px;
   border-radius: ${borderRadius};
 `;

@@ -7,9 +7,7 @@ import { SubHeading } from "@Components/SubHeading/SubHeading";
 export const BlacksmithDefinitionSlide = () => (
   <SlideLayout.Center>
     <StyledDefinitionsWrapper>
-      <Appear>
-        <Heading>{"Blacksmithing"}</Heading>
-      </Appear>
+      <Heading>{"Blacksmithing"}</Heading>
       <Appear>
         <Definition>
           {`A blacksmith is a metalsmith who creates objects, by forging
