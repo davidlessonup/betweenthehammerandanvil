@@ -1,4 +1,4 @@
-import { Slide, SpectacleLogo } from "spectacle";
+import { Slide, SpectacleLogo, Notes } from "spectacle";
 import { CommandHeading } from "@Components/CommandHeading/CommandHeading";
 import styled from "@emotion/styled";
 import { colors } from "@Foundations/colors";
@@ -44,7 +44,16 @@ export const StackSlide = () => (
         <SpectacleLogo size={50} />
       </StyledStackListEntry>
     </StyledStackListWrapper>
+    <StackNotes />
   </Slide>
+);
+
+const StackNotes = () => (
+  <Notes>
+    {
+      "In the spirit of this talk, this presentation was coded from scratch with the following stack"
+    }
+  </Notes>
 );
 
 const StyledStackListWrapper = styled.div`
