@@ -1,13 +1,11 @@
-import { Appear, SlideLayout, Notes } from "spectacle";
+import { SlideLayout, Notes } from "spectacle";
 import { Quote } from "@Components/Quote/Quote";
 
 export const LinthomancySunTzuSlide = () => (
   <SlideLayout.Center>
-    <Appear>
-      <Quote author="Sun Tzu">
-        {"The greatest victory is that which requires no battle."}
-      </Quote>
-    </Appear>
+    <Quote author="Sun Tzu">
+      {"The greatest victory is that which requires no battle."}
+    </Quote>
     <LinthomancySunTzuNotes />
   </SlideLayout.Center>
 );

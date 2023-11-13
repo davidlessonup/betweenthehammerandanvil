@@ -43,7 +43,7 @@ const ProfessionalIntroductionNotes = () => (
         "I've been coding for 22 years",
         "I enjoy pushing CSS to it's limits",
         "I dabble in code golfing from time to time",
-        "I champion for good UI/UX approches",
+        "I champion for good UI/UX approaches",
       ]}
     />
   </Notes>

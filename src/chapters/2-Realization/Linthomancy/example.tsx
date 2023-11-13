@@ -46,7 +46,7 @@ export const LintStrengthCodeExampleSlide = () => (
 
 export const LintStrengthCodeFixedExampleSlide = () => (
   <Slide>
-    <CommandHeading>{"git commit"}</CommandHeading>
+    <CommandHeading>{'git commit -m "fixed"'}</CommandHeading>
     <Stepper tagName="div" alwaysVisible values={["fixed"]}>
       {(value) => (
         <PullRequest>
@@ -60,7 +60,7 @@ export const LintStrengthCodeFixedExampleSlide = () => (
         </PullRequest>
       )}
     </Stepper>
-    <LintStrengthCodeExampleNotes />
+    <LintStrengthCodeFixedExampleNotes />
   </Slide>
 );
 
@@ -79,5 +79,15 @@ const LintStrengthCodeExampleNotes = () => (
         "But a pull request usually isn't just one file, is it?",
       ]}
     />
+  </Notes>
+);
+
+const LintStrengthCodeFixedExampleNotes = () => (
+  <Notes>
+    {"Going back to the code snippet example"}
+    <p />
+    {
+      "If we were to implement a linter, we could get this formatting automatically"
+    }
   </Notes>
 );

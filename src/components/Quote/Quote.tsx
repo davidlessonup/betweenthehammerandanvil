@@ -42,7 +42,7 @@ const StyledQuote = styled.div`
   &::after {
     content: " ";
     position: absolute;
-    height: 8vw;
+    height: 6vw;
     width: 8vw;
   }
 

@@ -4,11 +4,7 @@ import { Definition } from "@Components/Definition/Definition";
 
 export const PurposeUncomfortableTruthSlide = () => (
   <SlideLayout.Center>
-    <Appear>
-      <SubHeading>
-        {"The proccess of development is a Zero-sum game"}
-      </SubHeading>
-    </Appear>
+    <SubHeading>{"The proccess of development is a Zero-sum game"}</SubHeading>
     <Appear>
       <Definition>
         {`A Zero-sum game is a mathematical representation of a situation...`}

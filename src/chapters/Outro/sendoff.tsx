@@ -15,8 +15,11 @@ export const SendoffSlide = () => (
 const SendoffNotes = () => (
   <Notes>
     {
-      "As far as men go, it is not what they are that interests me, but what they can become"
+      "As a send-off I will leave a quote from one my favourite philosophers, Jean-Paul Sartre"
     }
     <p />
+    {
+      "As far as men go, it is not what they are that interests me, but what they can become"
+    }
   </Notes>
 );

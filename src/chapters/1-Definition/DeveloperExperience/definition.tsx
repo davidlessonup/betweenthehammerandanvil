@@ -12,8 +12,6 @@ export const DeveloperExperienceDefinitionSlide = () => (
       <Appear>
         <Definition>
           {`... encompasses the experiences of your internal software developers as they carry out their work.`}
-          <p />
-          <Appear>{}</Appear>
         </Definition>
       </Appear>
     </StyledDefinitionsWrapper>

@@ -23,6 +23,10 @@ export const LinthomancyLintDefinitionSlide = () => (
 
 const LinthomancyLintDefinitionNotes = () => (
   <Notes>
-    {"In the Art of War by Sun Tzu, there is an appropriate quote for this"}
+    {
+      "Linting is the automated checking of your source code for programmatic and stylistic errors"
+    }
+    <p />
+    {"This is done by using a linter"}
   </Notes>
 );

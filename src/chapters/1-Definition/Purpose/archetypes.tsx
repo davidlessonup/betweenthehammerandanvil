@@ -3,7 +3,6 @@ import styled from "@emotion/styled";
 import RadarChart from "react-svg-radar-chart";
 import { fonts } from "@Foundations/typography";
 import { colors, chartColors } from "@Foundations/colors";
-import { NotesTable } from "@Components/NotesTable/NotesTable";
 
 interface RadarChartData {
   data: {
@@ -215,13 +214,6 @@ export const PurposeArchetypesSlide = () => (
 
 const PurposeArchetypesNotes = () => (
   <Notes>
-    {
-      "If we consider software development as three dimensional, with those dimensions being:"
-    }
-    <NotesTable
-      slideName="definition-archetypes"
-      notes={["Reliability", "Delivery", "Expandability"]}
-    />
     {
       "We can see how focusing solely on one, has devastating outcomes to the other dimensions"
     }

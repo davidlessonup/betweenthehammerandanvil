@@ -35,7 +35,7 @@ export const LinthomancyReviewFocusRevisedSlide = () => (
 const LinthomancyReviewFocusRevisedNotes = () => (
   <Notes>
     {
-      "Going back to the four dimensions of a code review, and applying LINThomancy"
+      "Going back to the four dimensions of a code review, and assuming the usage of a lint"
     }
     <p />
     {

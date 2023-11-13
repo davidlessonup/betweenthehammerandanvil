@@ -42,7 +42,7 @@ export interface TableOfContentsSlideProps {
 const topics = [
   "Chapter 1: What is this talk about?",
   "Chapter 2: Sowing the seeds of progress",
-  "Chapter 3: A tale of caution",
+  "A word of caution",
 ];
 
 const longest = topics.reduce((acc, t) => (t.length > acc ? t.length : acc), 0);
