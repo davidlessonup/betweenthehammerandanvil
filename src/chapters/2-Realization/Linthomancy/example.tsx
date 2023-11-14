@@ -23,7 +23,6 @@ const determineWhichVersionToShow = function determineWhichVersionToShow(
 
 export const LintStrengthCodeExampleSlide = () => (
   <Slide>
-    <div style={{ paddingTop: "100px" }} />
     <Stepper tagName="div" alwaysVisible values={["errors"]}>
       {(value) => (
         <PullRequest>
@@ -45,7 +44,6 @@ export const LintStrengthCodeExampleSlide = () => (
 
 export const LintStrengthCodeFixedExampleSlide = () => (
   <Slide>
-    <div style={{ paddingTop: "100px" }} />
     <Stepper tagName="div" alwaysVisible values={["fixed"]}>
       {(value) => (
         <PullRequest>

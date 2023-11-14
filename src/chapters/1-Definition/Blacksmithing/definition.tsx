@@ -27,13 +27,12 @@ export const BlacksmithDefinitionSlide = () => (
 
 const BlacksmithDefinitionNotes = () => (
   <Notes>
+    {
+      "Before we go any further, we'll start by defining the meta topics of this talk."
+    }
     <NotesTable
       slideName="definition-blacksmith-definition"
-      notes={[
-        "Before we go any further, we'll start by defining the meta topics of this talk.",
-        "Blacksmithing",
-        "Everyone knows what a blacksmith is, right?",
-      ]}
+      notes={["Blacksmithing", "Everyone knows what a blacksmith is, right?"]}
     />
     {`A blacksmith is a metalsmith who creates objects, by forging
                         the metal, using tools to hammer, bend, and cut.`}

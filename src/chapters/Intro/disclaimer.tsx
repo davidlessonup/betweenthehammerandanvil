@@ -58,7 +58,7 @@ const IntroductionDisclaimerNotes = () => (
         "I won't make any software jokes",
       ]}
     />
-    {"This talk has been refactored 10 times, ...like most JS frameworks"}
+    {"This talk has been rewritten 10 times, ...like most JS frameworks"}
     <p />
     {"Oops."}
   </Notes>

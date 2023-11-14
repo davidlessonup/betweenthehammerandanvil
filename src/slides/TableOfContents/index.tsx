@@ -1,4 +1,10 @@
-import { Heading, UnorderedList, ListItem, SlideLayout } from "spectacle";
+import {
+  Heading,
+  UnorderedList,
+  ListItem,
+  SlideLayout,
+  Notes,
+} from "spectacle";
 import { Deprecated } from "@Components/Deprecated/Deprecated";
 import { LinuxCommandSpan } from "@Components/LinuxCommandSpan/LinuxCommandSpan";
 import React from "react";
@@ -39,11 +45,7 @@ export interface TableOfContentsSlideProps {
   chapter: number;
 }
 
-const topics = [
-  "Chapter 1: What is this talk about?",
-  "Chapter 2: Sowing the seeds of progress",
-  "A word of caution",
-];
+const topics = ["Chapter 1: Tempering perceptions", "Chapter 2: Forging ahead"];
 
 const longest = topics.reduce((acc, t) => (t.length > acc ? t.length : acc), 0);
 
@@ -71,7 +73,17 @@ export const TableOfContentsSlide: React.FC<TableOfContentsSlideProps> = ({
         {"Outro"}
       </ContentEntry>
     </UnorderedList>
+    <ContentsNotes />
   </SlideLayout.Center>
+);
+
+const ContentsNotes = () => (
+  <Notes>
+    {"Intro"}
+    {"Chapter 1: Tempering perceptions"}
+    {"Chapter 2: Forging ahead"}
+    {"Outro"}
+  </Notes>
 );
 
 const HiddenWrapper = styled.div`

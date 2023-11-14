@@ -43,7 +43,6 @@ const TableHeading: React.FC<React.PropsWithChildren<TableHeadingProps>> = ({
 );
 
 const stepperValues = [
-  "localBuild",
   "plugin",
   "githook",
   "pipelineBuild",
@@ -109,7 +108,6 @@ const table: Record<TableEntries, TableColumn> = {
 };
 
 const stepsMapper: Record<TableSteps, TableEntries[]> = {
-  localBuild: ["localBuild"],
   plugin: ["localBuild", "plugin"],
   githook: ["localBuild", "plugin", "githook"],
   pipelineBuild: ["localBuild", "plugin", "githook", "pipelineBuild"],
@@ -164,7 +162,7 @@ export const LinthomancyFailSlide = () => (
       {(value) => (
         <StyledTable>
           {getTableElements(
-            stepsMapper[value as TableSteps],
+            stepsMapper[value as TableSteps] || ["localBuild"],
             value as TableSteps,
           )}
         </StyledTable>

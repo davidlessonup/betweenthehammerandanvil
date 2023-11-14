@@ -3,7 +3,6 @@ import { ProgressTemplate } from "@Templates/Progress/Progress";
 import { IntroductionChapter } from "@Chapters/Intro";
 import { DefinitionChapter } from "@Chapters/1-Definition";
 import { RealizationChapter } from "@Chapters/2-Realization";
-import { CautionChapter } from "@Chapters/3-Caution";
 import { OutroChapter } from "@Chapters/Outro";
 import { QAChapter } from "@Chapters/QA";
 import { TableOfContentsSlide } from "@Slides/TableOfContents";
@@ -24,8 +23,6 @@ export const SlideDeck = () => (
       <TableOfContentsSlide chapter={2} />
       <RealizationChapter />
       <TableOfContentsSlide chapter={3} />
-      <CautionChapter />
-      <TableOfContentsSlide chapter={4} />
       <OutroChapter />
       <QAChapter />
     </Deck>

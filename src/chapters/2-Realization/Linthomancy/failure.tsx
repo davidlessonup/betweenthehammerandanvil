@@ -3,7 +3,7 @@ import { SubHeading } from "@Components/SubHeading/SubHeading";
 
 export const LinthomancyFailureSlide = () => (
   <SlideLayout.Center>
-    <SubHeading>{"Sprinkling in "}</SubHeading>
+    <SubHeading>{"Sprinkling in some"}</SubHeading>
     <Heading>{"Failure"}</Heading>
 
     <LinthomancyFailureNotes />
